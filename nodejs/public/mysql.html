@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <title>Document</title>
+    <style>
+        button{
+            background: lightgray;
+            width:60px;
+            height:30px;
+            border-radius:5px;
+            border:1px solid black;
+            text-align: center;
+            margin-right:20px;
+            margin-top:5px;
+        }
+        span{
+            display:inline-block;
+            width:120px;
+        }
+        textarea{
+            margin-top:10px;
+        }
+    </style>
+</head>
+<body>
+    <button><a href="http://127.0.0.1:3000/index.html">홈으로</a></button>
+    <div>
+        <button id="getall">GETALL</button>
+        <button id="get">GET</button>
+        <button id="post">POST</button>
+        <button id="put">PUT</button>
+        <button id="delete">DELETE</button>
+        <p>GET and DELETE need 'id'/ POST need 'all except id'/ PUT need 'all'</p>
+    </div>
+    <hr>
+    <h1>input</h1>
+    <span>id : </span><input id="id" name="id" type="text"><br>
+    <span>name : </span><input id="name" name="name" type="text"><br>
+    <span>modelnumber : </span><input id="modelnumber" type="text"><br>
+    <span>series : </span><input id="series" type="text">
+    <h1>output</h1>
+    <button id="clear">Clear</button><br>
+    <textarea id="output" disabled cols="70" rows="25"></textarea>
+    
+    <script>
+        // 전체조회 get을 눌렀을때 items를 전부 긁어오기
+        $('#clear').click(function(){
+            $('textarea').val("");
+        })
+        $('#getall').click(function(){
+            $.ajax({
+                url:'/products',
+                type:'get',
+                dataType:'text',
+                success:function(data){
+                    $('#output').val(data);
+                }
+            })
+        });
+        $('#get').click(function(){
+            var id = $('#id').val();
+            $.ajax({
+                url:'/products/' + id,
+                type:'get',
+                dataType:'text',
+                success:function(data){
+                    $('#output').val(data);
+                }
+            })
+            $('input').val('');
+        });
+        // 데이터 추가 post를 눌렀을때 items에 데이터 추가하고 추가한 데이터 화면출력
+        $('#post').click(function(){
+            $.ajax({
+                url:'/products',
+                type:'post',
+                dataType:'text',
+                data:{
+                    name:$('#name').val(),
+                    modelnumber:$('#modelnumber').val(),
+                    series:$('#series').val()
+                },
+                success:function(data){
+                    $('#output').val(data);
+                }
+            });
+            $('input').val('');
+        });
+
+        // 개별 데이터수정
+        $('#put').click(function(){
+            var id = $('#id').val();
+            $.ajax({
+                url:'/products/' + id,
+                type:'put',
+                dataType:'text',
+                data:{
+                    name: $('#name').val(),
+                    modelnumber: $('#modelnumber').val(),
+                    series: $('#series').val()
+                },
+                success:function(data){
+                    $('#output').val(data);
+                },
+                err:function(){}
+            });
+            $('input').val('');
+        });
+
+        $('#delete').click(function(){
+            var id = $('#id').val();
+            if($('#id').val()){
+                $.ajax({
+                    url:'/products/' + id,
+                    type:'delete',
+                    dataType:'text',
+                    success:function(data){
+                        $('#output').val(data);
+                    }
+                });
+            }else{
+                alert("지울 값 입력하세요");
+            }
+            $('input').val('');
+        });
+    </script>
+</body>
+</html>

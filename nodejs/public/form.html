@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <title>상품추가</title>
+    <style>
+        #output{
+            border:1px solid;
+        }
+        #output tr{
+            border:1px solid;
+        }
+        #output td{
+            border:1px solid;
+        }
+    </style>
+</head>
+<body>
+    <button><a href="http://127.0.0.1:3000/index.html">홈으로</a></button>
+    <div>
+        <form id="insert_form">
+            <fieldset>
+                <legend>데이터 추가</legend>
+                <table>
+                    <tr>
+                        <td><label>상품명</label></td>
+                        <td><input type="text" name="name" required></td>
+                    </tr>
+                    <tr>
+                        <td><label>모델 번호</label></td>
+                        <td><input type="text" name="modelnumber" required></td>
+                    </tr>
+                    <tr>
+                        <td><label>시리즈</label></td>
+                        <td><input type="text" name="series" required></td>
+                    </tr>
+                </table>
+                <input type="submit" value="추가">
+            </fieldset>
+        </form>
+        <input type="text" id="id">
+        <input type="button" value="조회" id="select">
+    </div>
+    <hr>
+    <table id="output">
+        <tr><td>아이디</td><td>이름</td><td>모델명</td><td>시리즈</td></tr>
+
+    </table>
+
+    <script>
+        // 전송버튼 클릭시 데이터 추가하기
+        $('#insert_form').submit(function(e){
+            // 입력폼에 입력한 데이터 전송하기
+            var data = $(this).serialize();
+            $.post('/products',data,function(){
+                $.getJSON('/products',function(d){
+                    console.log(d);
+                    $(d).each(function(i,item){
+                        var out = '';
+                        out += "<tr>";
+                        out += "<td>" + item.id + "</td>";
+                        out += "<td>" + item.name + "</td>";
+                        out += "<td>" + item.modelnumber + "</td>";
+                        out += "<td>" + item.series + "</td>";
+                        out += "</tr>";
+                        $('#output').append(out);
+                    });
+                });
+            });
+            e.preventDefault(); // 기본이벤트 제거
+        });
+
+        // id로 조회하기 - searchData()
+        $('#select').click(function(){
+            // ajax를 수행하기
+            if($('#id').val()){
+                var id = $('#id').val();
+                var str = '/products/' + id;
+                $.getJSON(str,function(data){
+                    var out = $('#output').val();
+                    out += "<tr>";
+                    out += "<td>" + data[0].id + "</td>";
+                    out += "<td>" + data[0].name + "</td>";
+                    out += "<td>" + data[0].modelnumber + "</td>";
+                    out += "<td>" + data[0].series + "</td>";
+                    out += "</tr>";
+                    $('#output').append(out);
+            });
+            }else{
+                alert("아이디가 잘못됨");
+            }
+        });
+    </script>
+</body>
+</html>
