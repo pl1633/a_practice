@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/practice.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h2>숫자 맞추기 게임</h2>
+
+    이 게임은 컴퓨터가 생성한 숫자를 맞추는 게임입니다. 숫자는 1부터 100 사이에 있습니다.
+    <form>
+        숫자:
+        <input type="text" id="user" size="5">
+        <input type="button" value="확인" id="myBtn" onclick="guess();">
+        추측횟수:
+        <input type="text" id="guesses" size="5">
+        힌트:
+        <input type="text" id="result" size="16">
+    </form>
+
+    <table border="3">
+        <tr>
+            <td>섭씨온도</td>
+            <td>화씨온도</td>
+        </tr>
+        <script>
+            for (celsius = 0; celsius <= 10; celsius++) {
+                document.write("<tr><td>" + celsius + "</td><td>"
+                + ((celsius * 9.0 / 5) + 32) + "</td></tr>");
+            }
+        </script>
+
+    <h1>글자 확대 축소하기</h1>
+    <button id="large">확대</button>
+    <button id="small">축소</button>
+
+    <p id="text"> welcome to my world</p>
+
+    <script>
+        var large = document.getElementById('large');
+        var small = document.getElementById('small');
+        var text = document.getElementById('text');
+        var num = parseInt(window.getComputedStyle(text).getPropertyValue('font-size'));
+        console.log(num);
+        large.onclick=function(){
+            num+=10;
+            text.style.fontSize = num + 'px';
+        }
+        small.onclick=function(){
+            num-=10;
+            text.style.fontSize = num + 'px';
+        }
+    </script>
+</body>
+</html>

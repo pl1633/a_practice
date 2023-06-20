@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트모델</title>
+    <style>
+        div, span, button{
+            border:1px solid;
+            padding:20px;
+            display:block;
+        }
+    </style>
+</head>
+<body id="body">
+    <h1>이벤트 위임(delegation)</h1>
+    <h2>이벤트흐름이 이벤트캡쳐링,버블링 단계를 거친다</h2>
+    <div id="div">
+        <span id="span">
+            <button id="btn">버튼</button>
+        </span>
+    </div>
+    <img id="image">
+    <h2>mouseover와 mouseenter</h2>
+    <div class="outer">
+        <div class="inner"></div>
+    </div>
+
+    <style>
+        .outer{
+            width:200px;
+            height:200px;
+            border:1px solid;
+        }
+        .inner{
+            width:80%;
+            height:80%;
+            border:1px solid;
+        }
+    </style>
+    <script src="js/eventmodel.js"></script>
+</body>
+</html>

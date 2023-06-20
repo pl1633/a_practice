@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/0516.js"></script>
+    <title>0516</title>
+    
+</head>
+<body>
+    <img src="./imgs/sq1.png" id="img">
+    <h1 id="h1"> 나는 누구인가?(클릭금지) </h1>
+
+    <script>
+        var cat={
+            name : "야옹이",
+            age : "2살"
+        }
+        var img = document.getElementById('img');
+        var h1 = document.getElementById('h1');
+        var i = 0;
+        img.onclick = function(){
+            if(i % 2){
+            h1.innerHTML= cat.name + "이고" + cat.age + "입니다";
+            }else{
+                h1.innerHTML = "나는 누구인가???";
+            }
+            i++;
+        }
+        img.width = 200;
+        img.height = 150;
+        // 이미지에 마우스를 올릴때 사진교체하기
+        img.onmouseover = function(){
+            this.src = "./imgs/sq2.png"
+            this.width = 200;
+            this.height = 150;
+        }
+        img.onmouseout = function(){
+            this.src = "./imgs/sq1.png";
+            this.width = 200;
+            this.height = 150;
+        }
+    </script>
+</body>
+</html>

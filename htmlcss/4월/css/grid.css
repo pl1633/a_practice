@@ -1,0 +1,141 @@
+/* 정적그리드 -pc버전 */
+/* .wrap{
+    width:960px; margin:0 auto;
+}
+.row{
+    margin: 2px;
+    overflow:hidden;
+    background-color: lightgray;
+}
+[class*=box]{
+    border:1px solid;
+    height:50px;
+    float:left;
+    margin:2px;
+}
+.grid12{
+    width:calc(960px - 8px - 4px);
+}
+.grid6{
+    width:calc(960px/2 - 7px - 4px);
+}
+.grid4{
+    width:calc(960px/3 - 4px - 4px);
+}
+.grid3{
+    width:calc(960px/4 - 3px - 4px);
+}
+.grid2{
+    width:calc(960px/6 - 3px - 4px);
+} */
+
+
+
+/* 동적그리드 태블릿, 모바일 */
+/* .wrap{
+    width:100%; margin:0 auto;
+}
+.row{
+    margin: 1%;
+    overflow:hidden;
+    background-color: lightgray;
+}
+[class*=box]{
+    border:1px solid;
+    height:80px;
+    float:left;
+    margin:1%;
+}
+.grid12{
+    width:calc(100% - 2.27%);
+}
+.grid6{
+    width:calc(100%/2 - 2.27%);
+}
+.grid4{
+    width:calc(100%/3 - 2.27%);
+}
+.grid3{
+    width:calc(100%/4 - 2.27%);
+}
+.grid2{
+    width:calc(100%/6 - 2.27%);
+} */
+
+/* 모바일 */
+@media screen and (max-width:767px){
+    .box{ border:1px solid; height:80px; margin:5px;}
+}
+
+
+/* 태블릿 */
+@media screen and (min-width:768px) and (max-width:1280px){
+    .wrap{
+        width:100%; margin:0 auto;
+    }
+    .row{
+        margin: 1%;
+        overflow:hidden;
+        display:flex;
+        background-color: lightgray;
+    }
+    [class*=box]{
+        border:1px solid;
+        height:80px;
+        /* float:left; */
+        margin:1%;
+        flex:1;
+    }
+    .grid12{
+        width:calc(100% - 2.27%);
+    }
+    .grid6{
+        width:calc(100%/2 - 2.27%);
+    }
+    .grid4{
+        width:calc(100%/3 - 2.27%);
+    }
+    .grid3{
+        width:calc(100%/4 - 2.27%);
+    }
+    .grid2{
+        width:calc(100%/6 - 2.27%);
+    }
+    
+}
+/* PC */
+@media screen and (min-width:1281px){
+    .wrap{
+        width:100%; margin:0 auto;
+    }
+    .row{
+        margin: 1%;
+        overflow:hidden;
+        background-color: lightgray;
+        /* display:flex; */
+        display:grid;
+    }
+    [class*=box]{
+        border:1px solid;
+        height:80px;
+        /* float:left; */
+        margin:2px;
+        /* flex:1; */
+    }
+    .g12{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .g6{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .g4{
+        grid-template-columns: repeat(3,1fr);
+    }
+    .g3{
+        grid-template-columns: repeat(4,1fr);
+    }
+    .g2{
+        grid-template-columns: repeat(6,1fr);
+    } 
+}
+

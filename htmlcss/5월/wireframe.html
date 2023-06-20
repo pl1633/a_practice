@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/wireframe.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- 스킵네비게이션 -->
+    <div class="ski_nav">
+        <a href="#article1">article1</a>
+        <a href="#article1">article2</a>
+        <a href="#article1">article3</a>
+    </div>
+    <header>
+        <div class="inner">
+            <h1>로고</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">MENU1</a>
+                        <div class="sub">
+                            <ol>SubMenu-1</ol>
+                            <ol>SubMenu-2</ol>
+                            <ol>SubMenu-3</ol>
+                            <ol>SubMenu-4</ol>
+                            <ol>SubMenu-5</ol>
+                        </div>
+                    </li>
+                    <li><a href="#">MENU2</a>
+                        <div class="sub">
+                            <ol>SubMenu-1</ol>
+                            <ol>SubMenu-2</ol>
+                            <ol>SubMenu-3</ol>
+                            <ol>SubMenu-4</ol>
+                            <ol>SubMenu-5</ol>
+                        </div>
+                    </li>
+                    <li><a href="#">MENU3</a>
+                        <div class="sub">
+                            <ol>SubMenu-1</ol>
+                            <ol>SubMenu-2</ol>
+                            <ol>SubMenu-3</ol>
+                            <ol>SubMenu-4</ol>
+                            <ol>SubMenu-5</ol>
+                        </div>
+                    </li>
+                    <li><a href="#">MENU4</a>
+                        <div class="sub">
+                            <ol>SubMenu-1</ol>
+                            <ol>SubMenu-2</ol>
+                            <ol>SubMenu-3</ol>
+                            <ol>SubMenu-4</ol>
+                            <ol>SubMenu-5</ol>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div id="content">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img width=100% height=100% src="./imgs/sq1.png"></div>
+                <div class="swiper-slide"><img width=100% height=100% src="./imgs/sq2.png"></div>
+                <div class="swiper-slide"><img width=100% height=100% src="./imgs/sq3.png"></div>
+                <div class="swiper-slide"><img width=100% height=100% src="./imgs/sq2.png"></div>
+                <div class="swiper-slide"><img width=100% height=100% src="./imgs/sq1.png"></div>
+                </div>
+        </div>
+        <div class="row">
+            <article>공지사항/갤러리</article>
+            <article>배너</article>
+            <article>바로가기</article>
+        </div>
+    </div>
+    <footer>
+        <div class="inner">
+            <h1>로고</h1>
+            <div class="bottom">
+                <p>하단메뉴</p>
+                <address>Copyright</address>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const swiper = new Swiper('.swiper', {
+      direction: 'horizontal',
+      loop: true,
+      autoplay:{
+        delay:2500
+      },
+    });
+    </script>
+</body>
+</html>

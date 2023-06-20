@@ -1,0 +1,216 @@
+
+/* -------------------------데스크탑 버전 시작------------------------- */
+
+@media screen and (min-width:1280px){
+    h1{
+        width: 900px;
+        margin:20px auto;
+        background-color: red;
+        color: white;
+        border:5px solid gray;
+        text-align: center;
+        letter-spacing: 10px;
+        padding: 10px;
+        text-transform: capitalize;
+        border-radius:5px;
+        font-family: serif;
+        text-shadow: 1px 1px black;
+    }
+    section{
+        width:900px;
+        margin:auto;
+    }
+    
+    [class=box]{
+        float: left;
+        border: 3px solid;
+        width:250px;
+        margin:10px;
+        padding:10px;
+        line-height: 1.7;
+        height:280px;
+        box-sizing: border-box;
+    }
+    [class=row]{
+        /* overflow:visible; */
+        margin:20px 10px;
+        padding-left:50px;
+    }
+    h2{
+        text-align:center;
+        border-bottom: 3px solid red;
+        width:90%;
+        margin:auto;
+        margin-bottom:20px;
+    }
+    ul>li{
+        text-indent: 35px;
+        position:relative;
+    }
+    ul>li::before{
+        content:'🐱';
+        position:absolute;
+        left:-20px; top:0;
+        cursor:pointer;
+    }
+    ul>li:hover{
+        background: lightgray;
+        cursor:pointer;
+    }
+    .box:hover{
+        transform:scale(1.1);
+        transition:1s;
+    }
+    
+    ul>li:hover:before{
+        content:'😸'
+    }
+    .row:after{
+        content:'';display:block;clear:both;
+    }
+}
+
+/* -------------------------데스크탑 버전 끝------------------------- */
+
+/* -------------------------테블릿 버전 시작------------------------- */
+@media (min-width:768px) and (max-width:1279px){
+    h1{
+        width: 100%;
+        margin:20px auto;
+        background-color: red;
+        color: white;
+        border:5px solid gray;
+        text-align: center;
+        letter-spacing: 10px;
+        padding: 10px;
+        text-transform: capitalize;
+        border-radius:5px;
+        font-family: serif;
+        text-shadow: 1px 1px black;
+    }
+    section{
+        width:900px;
+        margin:auto;
+        position:relative;
+        height:550px;
+    }
+    
+    [class=box]{
+        /* float: left; */
+        position:absolute;
+        border: 3px solid;
+        /* width: 25%; */
+        margin:10px;
+        padding:10px;
+        line-height: 1.7;
+        height:280px;
+        box-sizing: border-box;
+    }
+    [class=row]{
+        /* overflow:visible; */
+        margin:20px 10px;
+        padding-left:50px;
+    }
+    h2{
+        text-align:center;
+        border-bottom: 3px solid red;
+        width:90%;
+        margin:auto;
+        margin-bottom:20px;
+    }
+    ul>li{
+        text-indent: 35px;
+        position:relative;
+    }
+    ul>li::before{
+        content:'🐱';
+        position:absolute;
+        left:-20px; top:0;
+        cursor:pointer;
+    }
+    ul>li:hover{
+        background: lightgray;
+        cursor:pointer;
+    }
+    .box:hover{
+        transform:scale(1.1);
+        transition:1s;
+    }
+    
+    ul>li:hover:before{
+        content:'😸'
+    }
+    .row:after{
+        content:'';
+        display:block;
+        clear:both;
+    }
+    section{height: 600px;}
+    #toefl{background-color:gold;}
+    #toeic{left:20%; top:150px; background:silver;}
+    #english{left:30%; top:250px; background:pink;}
+    #japanese{left:45%; top:100px; background:tan;}
+    #academy{left:60%; top:0px; background:ivory;}
+    .box:hover{z-index:1;}
+}
+/* -------------------------테블릿 버전 끝------------------------- */
+
+/* -------------------------모바일 버전 시작------------------------- */
+@media screen and (max-width:767px){
+/* 1단 */
+    h1{
+        margin:20px auto;
+        background-color: red;
+        color: white;
+        border:5px solid gray;
+        text-align: center;
+        letter-spacing: 10px;
+        padding: 10px;
+        text-transform: capitalize;
+        border-radius:5px;
+        font-family: serif;
+        text-shadow: 1px 1px black;
+        width:90%;
+    }
+    section{
+        margin:auto;
+    }
+    
+    [class=box]{
+        border: 3px solid;
+        margin:10px;
+        padding:10px;
+        line-height: 1.7;
+        box-sizing: border-box;
+        box-shadow: 2px px gray;
+    }
+    [class=row]{
+        margin:10px auto;
+    }
+    h2{
+        text-align:center;
+        border-bottom: 3px solid red;
+        width:90%;
+        margin:auto;
+        margin-bottom:20px;
+    }
+    ul>li{
+        text-indent: 35px;
+        position:relative;
+    }
+    ul>li::before{
+        content:'🐱';
+        position:absolute;
+        left:-20px; top:0;
+        cursor:pointer;
+    }
+    ul>li:hover{
+        background: lightgray;
+        cursor:pointer;
+    }
+    
+    ul>li:hover:before{
+        content:'😸'
+    }
+}
+/* -------------------------모바일 버전 끝------------------------- */

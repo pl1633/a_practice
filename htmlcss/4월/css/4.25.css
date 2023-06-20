@@ -1,0 +1,86 @@
+.box{
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    float: left;
+}
+#box1{margin:10px 20px;}
+#box2{margin:20px 40px;}
+#box3{margin:30px 60px;}
+
+#mama{
+    width:95%;
+    border: 5px solid red;
+    float: left;
+    max-width:1000px;
+    min-width:700px;
+}
+#mama p{border:5px solid blue;
+    width:auto;
+    width:100%;
+    /* 부모의 가로크기 width에 100%로 맞춘다 */
+    box-sizing: border-box;
+    /* box-sizing: content-box; */
+    padding:20px 50px;
+}
+
+#box1{
+    border:5px solid black;
+    border-width:10px;
+    border-left-style:dashed;
+    border-right-color:red;
+    border-top-style:double;
+    border-bottom-width:20px;
+    border-bottom-color:orange;
+    /* border-width: thick thin medium; */
+}
+
+#box2{
+    width:1px; height:1px;
+    border:50px solid;
+    border-left-color:red;
+    border-right-color:blue;
+    border-top-color:orange;
+    border-bottom-color:pink;
+}
+#box2:hover{
+    border-left-color:gold;
+    border-right-color:gold;
+}
+#box2:active{
+    border-top-color:red;
+    border-bottom-color:red;
+}
+#box3{
+    border:5px solid blue;
+    outline:5px solid red;
+    outline-offset: 10px;
+}
+#box3:hover{
+    outline:10px double orange;
+    outline-offset: 5px;
+    outline-style:dotted;
+    outline-width:10px;
+    outline-color:orange;
+}
+#box3{
+    border-radius:30px;
+    border-top-right-radius:50px;
+    border-radius:10px 20px 30px 40px;
+    border-radius: 50%; /*원*/
+}
+#mama p{
+    font-size: 30px;
+    -webkit-text-stroke: 3px red;
+}
+#mama p:hover{
+    -webkit-text-stroke: 1px red;
+    /* vendor prefix */
+    cursor:pointer;
+}
+input, button{
+    padding:10px;
+    /* border:0; */
+    /* outline:0; */
+    all:unset;
+}

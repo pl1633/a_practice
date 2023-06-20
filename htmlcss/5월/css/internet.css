@@ -1,0 +1,95 @@
+header{
+    background: black;
+}
+header a{
+    color:white !important;
+    display:block;
+    padding:10px;
+}
+header li{
+    text-align:center;
+    z-index:1000;
+}
+header h1 img{
+    width:200px; height:100px;
+    border-radius:50px;
+    box-shadow:3px 3px 3px gray;
+}
+/* hover 효과주기 */
+ul>li:hover{
+    background:white;
+}
+ul>li:hover>a{
+    color:black !important;
+}
+ol>li:hover{
+    background:darkgray;
+}
+
+/* 테이블 디자인 */
+.table{
+    width:100%;
+}
+.table tr{
+    line-height:2;
+}
+.table tr:nth-child(2n){
+    background-color: lightgray;
+}
+.contents{
+    background-color: gray;
+}
+
+/* 이미지슬라이드 화살표변경 */
+.swiper-button-prev::after{
+    content:''; display:none;
+}
+.swiper-button-prev{
+    background: url('../imgs/left.png');
+    background-size:100% 100%;
+    border-radius:50%;
+    width:50px !important;
+    box-shadow:2px 2px black;
+}
+.swiper-button-next::after{
+    content:''; display:none;
+}
+.swiper-button-next{
+    background: url('../imgs/right.png');
+    background-size:100% 100%;
+    border-radius:50%;
+    width:50px !important;
+    box-shadow:2px 2px black;
+}
+.swiper-pagination-bullet{
+    background-color:skyblue !important;
+    width:25px !important;
+    height:25px !important;
+}
+
+/* 서비스 스타일 */
+.icons .info{
+    font-size: 1.2em;
+    color:blue;
+    font-weight:bold;
+    text-align:center;
+}
+.icons .text{
+    position:absolute;
+    top:0; left:50%;
+    transform:translateX(-50%);
+    color:white;
+    
+}
+/* 아이콘박스에 hover효과 주기 */
+.icons{position: relative;}
+
+.icons:hover>.text{
+    display:block;
+    transition:1s;
+    width:100%; height:100%;
+    background-color: rgba(0,0,0.0.5);
+    text-align:center;
+    font-size:2rem;
+    color:white;
+}

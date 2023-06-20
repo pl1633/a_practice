@@ -1,0 +1,103 @@
+/* 전체화면구현하기 */
+html, body{
+    width:100%; height:100%;
+    background: url('../imgs/back.png') no-repeat;
+    background-size: cover;
+}
+/* 비디오 풀스크린으로 구현하기 */
+video{
+    width:100%; height:100%;
+    object-fit: fill;
+}
+/* 헤더 구현하기 */
+header{
+    position: fixed;
+    left:0; top:0; right:0; /*width:100% 와동일*/
+    background: none;
+    height:100px;
+    border-bottom:1px solid gray;
+    box-shadow:0 1px 3px gray;
+    z-index:100;
+}
+#wrap_head{
+    position:absolute;
+    width:100%; height:100%;
+    left:0; top:0;
+}
+header:hover{
+    background-color:white; color:black;
+    border-bottom:1px solid black;
+    box-shadow:0 1px 3px black;
+}
+header h1{
+    position:absolute; left:20px; top:30px;
+    color:white; text-shadow: 1px 1px black;
+}
+/* 서브메뉴 숨기기 */
+ul ol{
+    display:none;
+}
+
+/* 메인메뉴 위치 조정 */
+nav{
+    position:absolute;
+    left:300px;
+    top:30px;
+}
+/* 메뉴 수평정렬하기-flex */
+nav ul{
+    display:flex;
+}
+/* a태그 박스처리하고 영역확장하기 - 여백의미 */
+nav ul>li>a{
+    display:block;
+    padding:10px;
+    font-weight:bold;
+}
+nav ul>li>a{
+    color:white !important;
+}
+header:hover *{
+    color:black !important;
+    text-shadow:0 1px lightgray;
+}
+/* 메인메뉴 수정하기 */
+nav{
+    font-size: 1.3em;
+    width:600px; left:400px;
+}
+nav ul>li{
+    flex:1;
+}
+/* 서브메뉴구현하기 */
+ul ol{
+    position:absolute;
+    top:100px;
+    left:0;
+    border-top: 1px solid;
+}
+ul>li:hover>ol{
+    display:flex;
+    background:white;
+    height:50px;
+    width:100%;
+}
+
+/* navi 위치수정하기 */
+nav{
+    position: static;
+    /* transform: translate(300px, 50px); */
+    margin-left:400px; margin-top:30px;
+}
+ol a{display: block; padding:10px;}
+ul>li:nth-child(1)>ol{padding-left: 300px;}
+ul>li:nth-child(2)>ol{padding-left: 400px;}
+ul>li:nth-child(3)>ol{padding-left: 500px;}
+ul>li:nth-child(4)>ol{padding-left: 600px;}
+ul>li:nth-child(5)>ol{padding-left: 700px;}
+
+/* 서브메뉴 도망 못가게하기 */
+/* 해결책은 메인메뉴영역을 패딩을 줘서 확장한다. */
+nav li{
+    padding-bottom: 50px;
+}

@@ -1,0 +1,61 @@
+ul a{
+    display: block;
+    padding: 10px;
+    color:white !important;
+}
+ul{
+    width: 200px;
+    margin: 0px;
+    text-indent: 10px;
+    height: 100%;
+}
+div{
+    position:relative;
+    width:200px;
+}
+ol{
+    position:absolute;
+    display:none;
+    left:100%; top:0;
+    width:600px; height: 500px;
+    border:1px solid lightgray;
+}
+ol span{
+    width:200px;
+    float:left;
+    text-align:center;
+}
+
+ul li{
+    background-color: rgb(60, 212, 93);
+}
+
+
+ul li:hover{
+    background:white;
+    transition:1s;
+}
+ul li:hover>a{
+    color:rgb(60, 212, 93) !important;
+}
+
+ul>li:hover>ol{
+    display:block;
+    transition:1s;
+}
+ol>span{
+    background-color: white;
+    float:left;
+}
+:not(:last-child){
+    border-bottom:1px solid white;
+}
+dl{
+    left:0; top:30px;
+    height:300%; width:100%;
+    background-color:white;
+}
+dl a{
+    color:black !important;
+}
+

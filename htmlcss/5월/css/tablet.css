@@ -1,0 +1,132 @@
+#main_header{
+    height:60px;
+    line-height:60px;
+    padding-left:10px;
+    border-bottom:1px solid black;
+    background:steelblue;
+    color:white;
+}
+#main_gnb{
+    overflow:hidden;
+    border-bottom:1px solid black;
+    background: #32394A;
+}
+#main_gnb > ul.left{
+    overflow: hidden;
+    float: left;
+}
+#main_gnb > ul.right{
+    overflow: hidden;
+    float: right;
+}
+#main_gnb>ul.left>li{float:left;}
+#main_gnb>ul.right>li{float:left;}
+
+#main_gnb a{
+    display:block;
+    padding:10px 20px;
+    border-left:1px solid #5F6673;
+    border-right:1px solid #242A37;
+    color:white;
+    font-weight: bold;
+}
+body{
+    min-width: 760px;
+    max-width: 1280px;
+    margin:auto;
+}
+#wrap{
+    overflow:hidden;
+    background:#71B1D1;
+    display:flex;
+}
+#wrap>#main_lnb{
+    width:200px;
+}
+#wrap>#content_wrap{
+    width:100%;
+}
+#wrap>#content_wrap>#content{
+
+}
+#main_lnb>ul>li>a{
+    display:block;
+    height:40px; line-height:40px;
+    padding-left:15px;
+    border-top:1px solid #96D6F6;
+    border-bottom:1px solid #6298B2;
+    color:white;
+    font-weight:bold;
+}
+#content{
+    background:white;
+    border-left:1px solid;
+}
+article{
+    padding:10px;
+}
+#main_footer{
+    padding:10px;
+    border-top:3px solid;
+    text-align:center;
+}
+
+/* 아코디언구현 */
+/* height:0->50px 시간차로 커지게한다. */
+#main_lnb div{
+    overflow:hidden;
+}
+#main_lnb div p{
+    height:0;
+    transition:0.5s;
+    text-indent:20px;
+}
+#main_lnb div:target p{
+    height:35px;
+    color:white;
+    line-height:35px;
+}
+#main_lnb div p a{
+    color:white;
+}
+
+#main_lnb2 ul{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.flex-box{
+    display:flex;
+    justify-content: space-between;
+    flex-wrap:wrap;
+    width:300px;
+    line-height: 80px;
+    overflow:visible;
+    background:blue;
+    border:3px solid;
+}
+.flex-box label{
+    width:230px;
+    text-indent: 30px;
+    color:white;
+    font-weight:bold;
+    font-size:24px;
+    z-index:1000;
+}
+.flex-box input{
+    display:none;
+}
+.flex-box>div{
+    width:300px;
+    height:0px;
+    line-height:80px;
+    background:white;
+    transition:0.5s;
+    text-align: center;
+    border-bottom:1px solid;
+    opacity:0;
+}
+input[type="radio"]:checked +div{
+    height:80px;
+    opacity:1;
+}

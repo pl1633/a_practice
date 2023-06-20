@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+    <script>
+        window.onload = function(){
+            var input_1 = document.querySelectorAll('input')[0];
+            var input_2 = document.querySelectorAll('input')[1];
+            input_1.onkeydown = function(){
+                if(6 <= input_1.value.length){
+                    input_2.focus();
+                }
+            }
+            input_2.onkeydown = function (event){
+                var event = event || window.event;
+                if(event.keyCode == 8 && input_2.value.length == 0){ // keyCode 8이 백스페이스
+                    input_1.focus();                                // input2가 비어있고 백스페이스를 누르면
+                }                                                   // input1로 focus
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" maxlength="6"/>
+    <span>-</span>
+    <input type="text" maxlength="7"/>
+</body>
+</html>

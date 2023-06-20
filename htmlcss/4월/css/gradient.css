@@ -1,0 +1,84 @@
+.wrap div{
+    border: 1px solid;
+    height: 300px;
+    margin: 5px;
+}
+.wrap{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.grad1{
+    background: linear-gradient(to right bottom, blue, white);
+}
+.grad1:hover{
+    background: linear-gradient(to left top, blue, white);
+}
+.grad2{
+    background: linear-gradient(45deg, #ff0000, #ffffff);
+}
+.grad2:hover{
+    background: linear-gradient(-45deg, #ff0000, #ffffff);
+}
+/* 중지점주기 - color stop */
+.grad3{
+    background: linear-gradient(to bottom, blue, white 30%, blue);
+}
+.grad3:hover{
+    background: linear-gradient(to bottom, blue, white 60%, blue);
+}
+.grad4{
+    background: radial-gradient(white,yellow,red);
+}
+.grad4:hover{
+    background: radial-gradient(circle,white,yellow,red);
+}
+.grad5{
+    background: radial-gradient(circle at 10% 10%,white,green);
+}
+.grad5:hover{
+    background: radial-gradient(circle at 90% 90%,white,green);
+}
+.grad6{
+    background: radial-gradient(circle closest-side at 30% 40%,white,gold,green);
+}
+/* closest-side 가장 가까운 사이드
+closest-corner 가장 가까운 코너
+farthest-side 가장 먼 사이드
+farthest-corner 가장 먼 코너 */
+.grad7{
+    background: radial-gradient(circle closest-corner at 30% 40%,white,gold,green);
+}
+.grad8{
+    background: radial-gradient(circle farthest-side at 30% 40%,white,gold,green);
+}
+.grad9{
+    background: radial-gradient(circle farthest-corner at 30% 40%,white,gold,green);
+}
+.grad10{
+    background: radial-gradient(red,yellow 20%,blue);
+}
+/* 그라디언트 패턴 */
+.grad11{
+    background: repeating-linear-gradient(yellow,red 20px);
+}
+.grad12{
+    background: repeating-linear-gradient(yellow,yellow 20px,red 20px,red 40px);
+}
+.grad13{
+    background: repeating-radial-gradient(circle, white, #ccc 10%);
+}
+.grad14{
+    background: repeating-radial-gradient(circle, white, white 10%,#ccc 10%, #ccc 20%);
+}
+h1{
+    font-size: 100px;
+    background: linear-gradient(red 0%, blue 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip:text;
+    /* 박스에 그라디언트를 주고 글자는 투명색을 주고
+    배경을 글자로 마스크를 씌운다 */
+
+    border:20px solid red;
+    border-image: linear-gradient(gold 0%, silver 50%, red 100%)20 stretch;
+    -webkit-text-stroke:5px black;
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/0613.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>폼관련 이벤트</h1>
+    <form action="회원가입.jsp">
+        <select>
+            <option value="daum">다음</option>
+            <option value="naver">네이버</option>
+            <option value="google">구글</option>
+        </select>
+        <input type="submit">
+    </form>
+    <div id="info"></div>
+    <h2> load와 ready의 차이점</h2>
+    <p> load는 이미지또는 프레임요소에 연동된 소스가 완료된 후</p>
+    <p> ready는 문서객체가 로딩이 완료된 후</p>
+    <div id="wrap">
+        <iframe src="http://www.daum.net"></iframe>
+    </div>
+    <hr>
+    <div class="parent">
+        <input type="text">
+    </div>
+    <input type="range" min="0" max="10" value="0">
+    <span></span>
+    <div id="img" style="display:;">
+        <img src="./imgs/sq1.png">
+        <img src="./imgs/sq2.png">
+        <img src="./imgs/sq3.png">
+        <img src="./imgs/sq1.png">
+        <img src="./imgs/sq2.png">
+        <img src="./imgs/sq3.png">
+    </div>
+    <script>
+        $('#img img').hide();
+        $('#img img').eq(0).show();
+        $('input[type=range]').on('mousemove mousedown mouseup',function(){
+            var range = $(this).val();
+            $('span').html(range);
+            $('#img img').hide();
+            $('#img img').eq(range).show('slow'); // fadeIn(), slideDown()
+        });
+        var i = 0;
+        setInterval(function(){
+            i++; i = i % 10;
+            $('span').html(i);
+            $('#img img').hide();
+            $('#img img').eq(i).show('slow');
+        },2000)
+        $('.parent').focusout(function(){
+            $('<h2>부모 focusout</h2>').appendTo('body');
+        })
+        $('input').blur(function(){
+            $('<h2>자식 blur</h2>').appendTo('body');
+        })
+        $('.parent').blur(function(){
+            $('<h2>부모 blur</h2>').appendTo('body');
+        })
+        $('input').focusout(function(){
+            $('<h2>자식 focusout</h2>').appendTo('body');
+        })
+        $('iframe').load(function(){
+            $('#wrap').append("<p>로딩완료...</p>");
+        });
+        $(document).ready(function(){
+            $('#wrap').append("<p>레딩완료...</p>");
+        });
+        $('select option').eq(1).attr('selected',true);
+        $('select').change(function(){
+            var val = $('select>option:selected').val();
+            var index = $('select>option:selected').index();
+            var html = $('select>option:selected').html();
+            var text = $('select>option:selected').text();
+            var out = `${index} : ${html} : ${text} : ${val}`;
+            $(`<p>${out}</p>`).appendTo('#info');
+        });
+    </script>
+</body>
+</html>

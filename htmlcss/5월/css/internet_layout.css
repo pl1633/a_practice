@@ -1,0 +1,147 @@
+/* 인터넷 레이아웃 */
+
+/* 헤더 레이아웃 */
+header{
+    position:relative;
+    height:150px;
+    width:1000px;
+    margin:auto;
+}
+header h1{
+    position:absolute;
+    left:50px;
+    top:20px;
+}
+
+header nav{
+    position:absolute;
+    right:20px;
+    top:30px;
+}
+/* 네비게이션메뉴 레이아웃 */
+header nav{
+    width:500px;
+}
+header nav ul{
+    display:flex;
+}
+header nav ul>li {
+    flex:1;
+}
+/* 서브메뉴 숨기기 */
+ul ol{
+    background: lightgray;
+    display:none;
+}
+ul>li:hover ol{
+    display:block;
+    width:100%;
+}
+
+/* 이미지슬라이드 레이아웃 */
+.img_slide{
+    height:350px;
+    width:1000px;
+    margin:auto;
+}
+.img_slide img{
+    height:350px;
+    width:1000px;
+}
+
+/* 컨텐츠 레이아웃 */
+.contents{
+    display:flex;
+    justify-content: space-between;
+    width:1000px;
+    margin:0 auto;
+    text-align:center;
+}
+.contents>div{
+    flex:1;
+    margin:20px;
+}
+
+/* 모달창 구현하기 */
+#modal{
+    display:none;
+    position:fixed;
+    left:0; top:0; bottom:0; right:0;
+    background-color:rgba(0,0,0,0.8);
+    z-index:100;
+}
+/* #modal:target{
+    display:block;
+} */
+.modal_inner{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%, -50%);
+    border:5px solid black;
+    z-index:100;
+    width:500px;
+    height:400px;
+    padding:10px;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    background:white;
+}
+.modal_inner img{
+    width:500px;
+}
+.modal_inner button{
+    width:50px;
+    margin-top:5px;
+}
+
+/* 서비스 레이아웃 */
+.service{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    width:1000px;
+    margin:auto;
+}
+.service .icons img{
+    width:90%;
+    display:block;
+    margin:auto;
+}
+
+/* 푸터푸터푸터푸터 */
+footer{
+    display:flex;
+    justify-content: space-between;
+    background:steelblue;
+    color:white;
+    flex-wrap:nowrap;
+    height:100px;
+}
+.notice_go{
+    margin:15px 40px;
+}
+.notice_go>ul{
+    display:flex;
+    height:50px;
+    line-height:50px;
+}
+.notice_go>ul>li{
+    margin:0 20px;
+}
+.address{
+    font-size:16px;
+    width:40%;
+    margin-right:5%;
+    padding:10px;
+}
+
+/* 헤더를 고정바로 구현하기 */
+header{
+    position:fixed;
+    left:0; top:0; right:0;
+    z-index:1000;
+}
+.img_slide{
+    padding-top:150px;
+}

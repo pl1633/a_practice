@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" id="html">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트모델</title>
+    <style>
+        html{border:5px solid red; padding:30px;}
+        body{border:5px solid blue; padding:30px;}
+        fieldset{border:5px solid lime; padding:30px;}
+        input{border:5px solid black; padding:30px;}
+    </style>
+</head>
+<body id="body">
+    <h1>자바스크립트 이벤트</h1>
+    <h1 id="header"><span>Header</span></h1>
+    <button id="btn1">버튼1</button>
+    <button id="btn2">버튼2</button>
+    <hr>
+    <div id="box"></div>
+    <div id="box2"></div>
+    <hr>
+    <button id="a">buttonA</button>
+    <button id="b">buttonB</button>
+    <h1>buttonA -<span id="ca">0</span></h1>
+    <h1>buttonB -<span id="cb">0</span></h1>
+    <button id="c">Stop</button>
+    <button id="d">Go</button>
+    <a href="http://www.daum.net" id="daum">다음</a>
+    <a href="javascript:void(0)" id="naver">네이버</a>
+    <a href="http://www.naver.com" id="naver2" onclick="return naver()">네이버</a>
+    <h2>기본이벤트제거 이용 유효성검사</h2>
+    <form action="http://www.google.co.kr" id="form">
+        <label>이름</label>
+        <input type="text" id="name2">
+        <input type="submit">
+    </form>
+    <hr>
+    <fieldset id="field">
+        <legend>이벤트 전달</legend>
+        <input type="button" id="button" value="target">
+    </fieldset>
+    <hr>
+    body태그
+    <div id="div"> div태그
+        <p id="p"> p태그
+            <a href="javascript:void(0)" id="aa">
+                a태그
+            </a>
+        </p>
+    </div>
+
+    <style>
+        div,p,a{
+            border: 2px solid blue;
+            margin: 20px;
+            padding: 20px;
+        }
+    </style>
+
+
+
+
+
+
+
+
+
+    <script>
+        function play(){
+            box.innerHTML += "이벤트핸들러 사용";
+        }
+        function play2(){
+            box2.innerHTML += "이벤트핸들러2 사용";
+        }
+        var btn1 = document.getElementById('btn1');
+        var btn2 = document.getElementById('btn2');
+        // btn1.onclick = play; 
+        // btn2.onclick = play2; // 고전이벤트 이벤트 동시할당 불가능
+        if(window.addEventListner){
+        btn1.addEventListner('click',play);
+        btn1.addEventListner('click',play2);
+        }
+        else if(window.attachEvent){
+            btn1.attachEvent('onclick',play);
+            btn1.attachEvent('onclick',play2);
+        }
+
+    </script>
+    <script src="js/event.js"></script>
+</body>
+</html>

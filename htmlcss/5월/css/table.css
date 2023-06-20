@@ -1,0 +1,40 @@
+html, body {
+  width: 100%;
+}
+
+.table1 {
+  caption-side: top;
+  margin: 10px;
+  width: 300px;
+  border: 0px solid blue;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed;
+}
+.table1 td {
+  width: 50px;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid red;
+  empty-cells: show;
+  vertical-align: top;
+}
+.table1 tr {
+  border: 0px solid gold;
+}
+.table1 caption {
+  border: 1px solid red;
+}
+
+input {
+  height: 30px;
+}
+
+ul {
+  display: table;
+}
+ul li {
+  display: table-cell;
+  padding: 10px;
+  border: 1px solid;
+}/*# sourceMappingURL=table.css.map */

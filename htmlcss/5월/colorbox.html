@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/colorbox.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="./js/jquery.colorbox.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>라이트박스 사용해보기</h1>
+    <div class="colorbox2">
+        <a href="./imgs/back.png" class="light" title="img1">img1</a>
+        <a href="./imgs/sq1.png"  class="light" title="img1">img1</a>
+        <a href="./imgs/sq2.png"  class="light" title="img1">img1</a>
+        <a href="./imgs/sq3.png"  class="light" title="img1">img1</a>
+    </div>
+    <hr>
+    <div class="box">
+        <h1>CSS를 이용한 리스트 넘버링</h1>
+        <h2>커피</h2>
+        <ul data-brand="coffee">
+            <li >스타벅스</li>
+            <li>별다방</li>
+            <li>이디야</li>
+            <li>커피빈</li>
+            <li>컴포즈</li>
+        </ul>
+        <h2>주스</h2>
+        <ul data-brand="juice">
+            <li>딸기주스</li>
+            <li>망고주스</li>
+            <li>오렌지주스</li>
+        </ul>
+    </div>
+
+
+
+    <style>
+        ul:after{
+            content:'-----------' attr(data-brand) '-----------';
+        }
+        ul{
+            margin:30px;
+            counter-reset: list-number;
+        }
+        ul>li{
+            counter-increment: list-number;
+            margin: 10px;
+        }
+        ul>li:before{
+            content:counter(list-number);
+            display:inline-block;
+            width:30px; height:30px; border-radius:50%;
+            margin:5px;
+            background:brown; text-align:center; color:white; line-height:30px;
+        }
+        .box{
+            counter-reset:title;
+        }
+        h2{
+            counter-increment: title;
+        }
+        h2::before{
+            content:counter(title); display:inline-block; width:40px;
+            height:40px; background:gold; border-radius:50%;
+            text-align:center;
+        }
+        ul li:before{
+            content:counter(title) "-" counter(list-number);
+            padding:5px;
+        }
+    </style>
+
+
+
+    <script>
+        // $('a').colorbox();
+        $('.light').colorbox({rel:'light'});
+        // $("css선택자").colorbox({})
+    </script>
+</body>
+</html>

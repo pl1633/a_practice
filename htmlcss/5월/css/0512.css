@@ -1,0 +1,104 @@
+.multi{
+    column-count: 3;
+    padding: 10px;
+    column-width:1px solid red;
+    -webkit-column-width:1px solid red;
+    column-rule-color:red;
+    column-gap: 20px;
+    column-rule-style: solid;
+    column-rule-width: 5px;
+    column-rule: 5px dotted blue;
+    column-width: 120px;
+}
+.multi:hover p{
+    column-span: all;
+}
+.charts{
+    display:flex;
+    justify-content: center;
+}
+svg{
+    width: 220px;
+    height: 220px;
+}
+svg circle{
+    /* 면색 */
+    fill:gray;
+    /* 선색 */
+    stroke-width: 20;
+
+    stroke-dasharray: 720;
+    stroke-dashoffset: 620;
+    stroke-linecap: round;
+    stroke: orange;
+}
+
+@keyframes line1{
+    from{
+        stroke-dashoffset: 630;
+    }
+    to{
+        stroke-dashoffset: 100;
+    }
+}
+.chart circle{
+    animation: line1 1s alternate forwards;
+
+}
+.chart:nth-child(2) circle{
+    animation: line1 2s alternate forwards ease 1s;
+    stroke: red;
+}
+.chart:nth-child(3) circle{
+    animation: line1 3s alternate forwards ease 3s;
+    stroke: blue;
+}
+
+ul{
+    display:flex;
+    margin:20px;
+}
+ul>li{
+    border: 1px solid;
+    text-align: center;
+    text-transform: uppercase;
+}
+ul>li>a{
+    padding: 10px;
+    display:block;
+    width:80px;
+    height:70px;
+    line-height:70px;
+}
+
+ul>li>a>span:fisrt-child{
+    display:block;
+}
+ul>li>a>span:last-child{
+    display:none;
+}
+ul>li:hover>a>span:first-child{
+    display:none;
+}
+ul>li:hover>a>span:last-child{
+    display:block;
+}
+
+/* 기본상태에서 영문글자가 나오고
+마우스올리면 한글글자가 나오게하기 */
+/* 첫번째 글자만 보이고, 두번째 글자는 숨기고
+마우스올리면 첫번째 글자 숨기고, 두번째글자 보이게 */
+
+ul>li>a>img:fisrt-child{
+    display:block;
+}
+ul>li>a>img:last-child{
+    display:none;
+}
+ul>li:hover>a>img:first-child{
+    display:none;
+}
+ul>li:hover>a>img:last-child{
+    display:block;
+    margin:auto;
+}

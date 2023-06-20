@@ -1,0 +1,58 @@
+section{
+    width:100px; height:100px;
+    border:5px solid;
+    margin:30px;
+}
+section>div{
+    width:100px;height:100px;
+    background-color:red;
+    transition:1s;
+    transform-origin:right bottom;
+}
+section:hover>div{
+    transform: scale(1.2) rotate(45deg);
+    transition: 1s;
+}
+#cubic{
+    width:200px; height:200px;
+    position:relative;
+    margin:5px;
+}
+#cubic>p{
+    width:200px; height:200px;
+    position:absolute;
+    left:0;top:0;
+    opacity:0.7;
+    font-size:50px;
+    text-align:center;
+    line-height:200px;
+}
+#cubic>p:nth-child(1){background:red;}
+#cubic>p:nth-child(2){background:blue;}
+#cubic>p:nth-child(3){background:green;}
+#cubic>p:nth-child(4){background:tomato;}
+#cubic>p:nth-child(5){background:pink;}
+#cubic>p:nth-child(6){background:steelblue;}
+
+/* 옆면 */
+#cubic>p:nth-child(1){transform: rotateY(0deg) translate3d(0,0,100px);}
+#cubic>p:nth-child(2){transform: rotateY(90deg) translate3d(0,0,100px);}
+#cubic>p:nth-child(3){transform: rotateY(180deg) translate3d(0,0,100px);}
+#cubic>p:nth-child(4){transform: rotateY(270deg) translate3d(0,0,100px);}
+/* 윗면과 아랫면 */
+#cubic>p:nth-child(5){transform: rotateX(90deg) translate3d(0,0,100px);}
+#cubic>p:nth-child(6){transform: rotateX(270deg) translate3d(0,0,100px);}
+
+#cubic{
+    transform-style:preserve-3d; margin-left:150px;
+    backface-visibility: hidden;
+}
+body{perspective:500px;}
+
+@keyframes cubic{
+    from{transform: rotateX(0) rotateY(0) rotateZ(0);}
+    to{transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg)}
+}
+#cubic{
+    animation: cubic 3s infinite;
+}

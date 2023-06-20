@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        function jug(damage, health, alive)
+        {
+            this.damage=damage;
+            this.health=health;
+            this.alive = alive;
+            this.attack = function (terran) {
+                terran.health -= this.damage;
+            }
+        }
+        function marrine(damage, health, alive){
+            this.damage=damage;
+            this.health=health;
+            this.alive = alive;
+            this.attack = function (jug) {
+                jug.health -= this.damage;
+            }
+        }
+        function medic(heal, health, alive){
+            this.heal=heal;
+            this.health=health;
+            this.alive = alive;
+            this.heal = function (terran) {
+                terran.health += this.heal;
+            }
+        }
+        function firebat(damage, health, alive){
+            this.damage=damage;
+            this.health=health;
+            this.alive = alive;
+            this.attack = function (jug) {
+                jug.health -= this.damage;
+            }
+        }
+        var jug_count = Math.floor(Math.random()*4 + 1) // 1~5마리의 저글링마릿수 랜덤생성
+        var juggling = new Array(jug_count);
+        
+        for (i=0;i<jug_count;i++){
+            juggling[i] = new jug(6,60,true); //저글링 생성
+            console.log(`juggling${i} created`);
+            console.log(juggling[i]);
+        }
+
+        mar = new marrine(7,70,true);
+        med = new medic(7,70,true);
+        fire = new firebat(4,90,true);
+
+        var check = 1;
+        while(check){
+            var combat = Math.floor(Math.random()*5+1);
+            var which = Math.floor(Math.random()*jug_count);
+            if (combat == 1){
+                if(juggling[which].alive){
+                    mar.attack(juggling[which]);
+                    console.log(`marine attack juggling[${which}]`)
+                    console.log(juggling[which].health);
+                }
+                    if(juggling[which].health <= 0){
+                        juggling[which].alive = false;
+                        console.log("shoot dead juggling");
+                    }
+            }
+            if (combat == 2){
+                if(juggling[which].alive){
+                    fire.attack(juggling[which]);
+                    console.log(`firebat attack juggling[${which}]`)
+                    console.log(juggling[which].health);
+                }
+                if(juggling[which].health <= 0){
+                        juggling[which].alive = false;
+                        console.log("shoot dead juggling");
+                    }
+            }
+            if (combat == 3){
+                if((which%2) == 0){
+                    med.heal(mar);
+                    console.log("heal marine")
+                    console.log(mar.health);
+                }
+                else{
+                    med.heal(fire);
+                    console.log("heal firebat")
+                    console.log(fire.health);
+                }
+            }
+
+            for (i=0;i<jug_count;i++){
+                check = 1;
+                if(juggling[i].alive){
+                    check++;
+                }
+                if(check == 1){
+                    check = 0;
+                }
+            }   
+        }
+
+
+
+    </script>
+
+</body>
+</html>

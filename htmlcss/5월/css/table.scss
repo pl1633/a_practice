@@ -1,0 +1,37 @@
+html,body{
+    width:100%;
+}
+.table1{
+    caption-side:top;
+    margin:10px;
+    width:300px;
+    border:0px solid blue;
+    border-collapse: separate;
+    border-spacing: 0;
+    table-layout: fixed;
+    & td {
+        width:50px;
+        padding:10px;
+        text-align:center;
+        border:1px solid red;
+        empty-cells:show;
+        vertical-align: top;
+    }
+    & tr{
+        border:0px solid gold;
+    }
+    & caption{
+        border:1px solid red;
+    }
+}
+input{
+    height:30px;
+}
+ul{
+    display: table;
+    & li{
+        display: table-cell;
+        padding: 10px;
+        border:1px solid;
+    }
+}

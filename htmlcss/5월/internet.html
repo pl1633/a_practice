@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/internet.css">
+    <link rel="stylesheet" href="css/internet_layout.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <title>인터넷 센터</title>
+</head>
+<body>
+    <header>
+        <h1 id="contact"><img src="http://placekitten.com/200/150" width="200" height="150"></h1>
+        <nav>
+            <ul>
+                <li><a href="@">센터소개</a>
+                    <ol>
+                        <li><a href="#">Sub menu</a></li>
+                        <li><a href="#">Sub menu</a></li>
+                        <li><a href="#">Sub menu</a></li>
+                    </ol>
+                </li>
+                <li><a href="@">센터업무</a>
+                    <ol>
+                        <li><a href="#">Sub menu</a></li>
+                        <li><a href="#">Sub menu</a></li>
+                        <li><a href="#">Sub menu</a></li>
+                    </ol>
+                </li>
+                <li><a href="@">Contact</a>
+                    <ol>
+                        <li><a href="#">Sub menu</a></li>
+                        <li><a href="#">Sub menu</a></li>
+                        <li><a href="#">Sub menu</a></li>
+                    </ol>
+                </li>
+            </ul>
+        </nav>
+    <script>
+        var contact=document.getElementById('contact');
+        contact.onclick=function(){
+            // alert("경고창입니다");
+            console.log("welcome to my world !!!");
+            console.dir("안녕하세요");
+            window.open("contact.html","창이름","width=600,height=600,left=300, top=300,toolbar=no,location=no, status=no, menubar=no, resizable=no");
+        }
+    </script>
+
+    </header>
+    <div class="img_slide">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="http://placekitten.com/1000/350"></div>
+              <div class="swiper-slide"><img src="http://placekitten.com/1000/350"></div>
+              <div class="swiper-slide"><img src="http://placekitten.com/1000/350"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-scrollbar"></div>
+          </div>
+    </div>
+    <div class="contents">
+        <div class="notice">
+            <h2>공지사항</h2>
+            <table class="table">
+                <tr>
+                    <td><a href="#">인터넷센터에서 12회 심포지움을 개최합니다.</a></td>
+                    <td>2018-04-10</td>
+                </tr>
+                <tr>
+                    <td><a href="#">인터넷센터에서 12회 심포지움을 개최합니다.</a></td>
+                    <td>2018-04-10</td>
+                </tr>
+                <tr>
+                    <td><a href="#">인터넷센터에서 12회 심포지움을 개최합니다.</a></td>
+                    <td>2018-04-10</td>
+                </tr>
+                <tr>
+                    <td><a href="#">인터넷센터에서 12회 심포지움을 개최합니다.</a></td>
+                    <td>2018-04-10</td>
+                </tr>
+                <tr>
+                    <td><a href="#">인터넷센터에서 12회 심포지움을 개최합니다.</a></td>
+                    <td>2018-04-10</td>
+                </tr>
+            </table>
+        </div>
+        <div class="partner">
+            <h2>Web Partner Site</h2>
+            <div class="partner_info">
+                <a href="#modal"><img id="img_modal" src="http://placekitten.com/400/250"></a>
+            </div>
+        </div>
+    </div> <!-- contents end-->
+    
+    <!-- 모달 팝업창 -->
+    <div id="modal">
+        <div class="modal_inner">
+            <img src="http://placekitten.com/400/300">
+            <button id="close" onclick="window.close">닫기</button>
+        </div>
+    </div>
+    <script>
+        var btn = document.getElementById('close');
+        var img = document.getElementById('img_modal');
+        var modal = document.getElementById('modal');
+        // 닫기버튼을 클릭하면 모달창이 닫혀라
+
+        btn.onclick=function(){
+            modal.style.display="none";
+            //modal에 css를 display를 none으로 지정한다.
+        }
+        img.onclick=function(){
+            modal.style.display="block";
+        }
+    </script>
+
+    <div class="service">
+        <div class="icons">
+            <img src="http://placekitten.com/200/120">
+            <p class="text">인터넷 정보수집발굴</p>
+            <p class="info">인터넷 사례조사</p>
+        </div>
+        <div class="icons">
+            <img src="http://placekitten.com/200/120">
+            <p class="text">교육프로그램 개발</p>
+            <p class="info">인터넷 사례조사</p>
+        </div>
+        <div class="icons">
+            <img src="http://placekitten.com/200/120">
+            <p class="text">역기능 예방 및 대응</p>
+            <p class="info">인터넷 사례조사</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="notice_go">
+            <ul>
+                <li><a href="#"></a>법적고지</li>
+                <li><a href="#"></a>개인정보취급방침</li>
+                <li><a href="#"></a>개인업보처리방침</li>
+            </ul>
+        </div>
+        <div class="address">
+            <p>인터넷 센터</p>
+            <p>대표자 : 윤선미</p>
+            <p>개인정보관리책임자 : 장동건</p>
+            <p>사업장주소 : 서울시 여의도 청와대학교</p>
+        </div>
+    </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+
+        direction: 'horizontal',
+        loop: true,
+
+        autoplay:{
+            delay:3000,
+        },
+
+        pagination: {
+            el: '.swiper-pagination',
+            clickable:true
+        },
+
+
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+
+        scrollbar: {
+            el: '.swiper-scrollbar',
+        },
+        });
+    </script>
+</body>
+</html>

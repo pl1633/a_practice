@@ -1,0 +1,252 @@
+.wrap{
+    width:100%;
+    height:100%;
+}
+header{
+    width:100%;
+    height:100px;
+    margin:auto;
+    display:flex;
+    justify-content: space-between;
+    background:lightgray;
+    align-items:end;
+    overflow:visible;
+    position:relative;
+    min-width:1050px;
+}
+header h1{
+    width:200px; height:100px;
+    text-align: center;
+    line-height: 100px;
+    text-shadow: 2px 2px 2px orange;
+    margin-left: 30px;
+    position:absolute;
+    top:0; left:0;
+}
+header ul{
+    width:800px; height:40px;
+    line-height:40px;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    background:rgb(50,50,50);
+    color:white;
+    cursor:pointer;
+    position:absolute;
+    top:60px;right:0;
+}
+header ul>li{
+    text-align:center;
+    z-index:1000000;
+    width:200px;
+}
+header ul>li:hover{
+    background:white;
+    color:black;
+}
+.sub{
+    opacity:0;
+    visibility:hidden;
+    background:rgb(50,50,50);
+    z-index:9999999;
+    width:100%;
+    height:160px;
+    color:white;
+    justify-content: space-around;
+    position:absolute;
+    top:100%;
+    left:0; right:0;
+    transition:0.7s;
+}
+
+.sub ol{
+    position:absolute;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+}
+.sub ol:nth-child(1){right:600px;}
+.sub ol:nth-child(2){right:400px;}
+.sub ol:nth-child(3){right:200px;}
+.sub ol:nth-child(4){right:0px;}
+
+.sub ol li{
+    width:200px;
+    height:40px;
+    line-height:40px;
+    text-align: center;
+    cursor:pointer;
+}
+.sub ol li:hover{
+    background:gray;
+}
+ul:hover ~ .sub{
+    opacity:1;
+    visibility:visible;
+}
+.sub:hover{
+    opacity:1;
+    visibility:visible;
+}
+
+.content{
+    display:flex;
+    justify-content:space-around;
+    width:1200px;
+    height:200px;
+    margin:auto;
+}
+.content>div{
+    flex:1;
+    margin:5px;
+}
+.content>div>h2{
+    margin:10px;
+}
+.content>div>hr{
+    border: 2px solid;
+    color: orange;
+    margin-bottom:5px;
+}
+#content1 table{
+    width:100%;
+}
+#content1 tr{
+    height:32px;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+#content1 tr:nth-of-type(2n){
+    background:orange;
+}
+
+
+.img_box{
+    display:flex;
+    justify-content: space-around;
+    margin-top:20px;
+}
+
+#content3{
+    background: url(../imgs/shortcut.jpg) no-repeat;
+    background-size:cover;
+    position:relative;
+}
+#content3 button{
+    position:absolute;
+    display:block;
+    width:60%;
+    top:40%;
+    right:0;
+    left:0;
+    margin:auto;
+    background: rgba(0,0,0,0.3);
+    text-align:center;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+#content3>button>h2{
+    font-weight:normal;
+}
+
+footer{
+    background:lightgray;
+    color:darkolivegreen;
+    display:flex;
+    margin:auto;
+    justify-content: space-between;
+    align-items: center;
+    height:100px;
+    width:100%;
+    min-width:1050px;
+}
+footer h2{
+    margin:10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+}
+footer ol{
+    margin:10px;
+    align-items: center;
+}
+footer img{
+    width:50px;
+    height:50px;
+    margin:0 10px;
+}
+footer select{
+    width:200px;
+    margin-left:10px;
+}
+
+
+.swiper{
+    width:1200px;
+    height:300px;
+    position:relative;
+}
+.swiper-slide img{
+    width:100%;
+    height:300px;
+}
+
+.swiper>h2{
+    z-index:9999;
+    background:rgba(0,0,0,0.3);
+    color:white;
+    position:absolute;
+    left:33%;
+    top:45%;
+    width:400px; height:30px;
+    text-align:center;
+    font-weight:normal;
+}
+
+
+#modal{
+    background:rgba(0,0,0,0.3);
+    width:100%; height:100%;
+    position:absolute;
+    left:0; right:0;
+    top:0; bottom:0;
+    display:none;
+    z-index:99999;
+}
+#modal_center{
+    width:400px;
+    height:400px;
+    background:white;
+    left:0; right:0;
+    top:0; bottom:0;
+    position:absolute;
+    margin:auto;
+    padding:10px;
+}
+#modal_center h2{
+    margin-bottom:20px;
+}
+#modal_center p{
+    line-height:30px;
+    height:280px;
+}
+#modal_center button{
+    float:right;
+    margin:10px 20px;
+    width:80px;
+    height:30px;
+    font-size:16px;
+    border-radius:5px;
+    border:none;
+    color:white;
+    background:cornflowerblue;
+}
+#moodal_center h2{
+    margin:30px;
+}
+
+tr{
+    cursor:pointer;
+}

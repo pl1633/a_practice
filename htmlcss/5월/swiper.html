@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/swiper.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <title>Swiper</title>
+    <style>
+        .swiper {
+            width: 600px;
+            height: 400px;
+        }
+        div{
+            margin:auto;
+        }
+        .bxslider img{
+            width:600px;
+            height:400px;
+        }
+    </style>
+</head>
+<body>
+    <h1>이미지 슬라이드 라이브러리 사용하기</h1>
+
+    <div class="swiper">
+
+        <div class="swiper-wrapper">
+
+        <div class="swiper-slide"><img src="./imgs/sq1.png"></div>
+        <div class="swiper-slide"><img src="./imgs/sq2.png"></div>
+        <div class="swiper-slide"><img src="./imgs/sq3.png"></div>
+        <div class="swiper-slide"><img src="./imgs/sq2.png"></div>
+        <div class="swiper-slide"><img src="./imgs/sq1.png"></div>
+      ...
+        </div>
+    </div>
+  <h1>bxslider 슬라이더 사용하기</h1>
+  <div class="bxslider">
+	<div><img src="./imgs/sq1.png" /></div>
+	<div><img src="./imgs/sq2.png" /></div>
+	<div><img src="./imgs/sq3.png" /></div>
+    <div><img src="./imgs/sq2.png" /></div>
+    <div><img src="./imgs/sq1.png" /></div>
+  </div>
+
+
+  <script>
+    const swiper = new Swiper('.swiper', {
+  direction: 'horizontal',
+  loop: true,
+  autoplay:{
+    delay:2500
+  },
+});
+  </script>
+
+
+  <script type="text/javascript">
+        $(document).ready(function(){
+        $('.bxslider').bxSlider({
+            slideWidth: 500,
+        });
+    });
+    </script>
+</body>
+</html>

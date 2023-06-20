@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0605.html</title>
+    <!-- <script src="js/0605.js"></script> -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>call, apply, bind에 대해서</h1>
+    <h2>바닐라자바스크립트 실습</h2>
+    <h2>이미지 슬라이드 만들기</h2>
+    <div id="slider">
+        <div class="item">
+            <h1>one</h1>
+        </div>
+        <div class="item">
+            <h1>two</h1>
+        </div>
+        <div class="item">
+            <h1>three</h1>
+        </div>
+        <div class="item">
+            <h1>four</h1>
+        </div>
+        <div class="item">
+            <h1>five</h1>
+        </div>
+        <div class="item">
+            <h1>six</h1>
+        </div>
+    </div>
+    <h2>순환하는 이미지 슬라이드</h2>
+    <div id="gallery2">
+        <ul>
+            <li style="left:0">이미지0</li>
+            <li>이미지1</li>
+            <li>이미지2</li>
+            <li>이미지3</li>
+            <li>이미지4</li>
+        </ul>
+        <p><button>left</button><button>right</button></p>
+    </div>
+
+    <script>
+        var SHOW = "show";
+        const firstSlide = document.querySelector('.item:first-child');
+
+        function slide(){
+            var currentSlide = document.querySelector(`.${SHOW}`);
+            if(currentSlide){
+                currentSlide.classList.remove(SHOW);
+                var nextSlide = currentSlide.nextElementSibling;
+                if(nextSlide){
+                    nextSlide.classList.add(SHOW);
+                }else{
+                    firstSlide.classList.add(SHOW);
+                }
+                
+            } else{
+                firstSlide.classList.add(SHOW);
+            }
+        }
+
+        slide();
+        var STOP = setInterval(slide,2000);
+
+        // mouse event로 마우스를 올리면 슬라이드 중지
+        // 마우스가 다시 나가면 슬라이드 재개
+
+        var slider = document.getElementById('slider');
+        slider.addEventListener('mouseenter',function(){
+            console.log("enter");
+            clearInterval(STOP);
+        });
+        slider.addEventListener('mouseleave',function(){
+            console.log("leave");
+            STOP = setInterval(slide,2000);
+        });
+
+        var LI = document.querySelectorAll('ul>li');
+        var LEFT = document.querySelector('p button:first-child');
+        var RIGHT = document.querySelector('p button:last-child');
+
+        var current = 0;
+        Init();
+        LEFT.onclick = function(){
+            Init();
+            current--;
+            if(current < 0){
+                current = LI.length-1;
+            }
+            var next = LI[current];
+            next.style.left = "-100%";
+            next.style.left = "0";
+
+        }
+        RIGHT.onclick = function(){
+            Init();
+            current++;
+            if(current % 5 == 0){
+                current = 0;
+            }
+            Init();
+        }
+        function Init(){ // 이미지 죄다 오른쪽
+            for(var i=0;i<LI.length;i++){
+                if(i == current){
+                    LI[i].style.left = "0%";
+                }else if((i == current + 1) || ((current == LI.length-1) || i == 0)){
+                    LI[i].style.left = "100%";
+                }else if((i == current - 1) || ((current == 0) || i == LI.length-1)){
+                    LI[i].style.left = "-100%";
+                }else{
+                    LI[i].style.left = "0%";
+                    LI[i].style.opacity = 0;
+                }
+            }
+        }
+
+        
+    </script>
+</body>
+</html>

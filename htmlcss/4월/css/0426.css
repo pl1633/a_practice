@@ -1,0 +1,98 @@
+.box{
+    width: 100px;
+    height: 100px;
+    background: red;
+    position: absolute;
+}
+.box:nth-of-type(1){
+    background-color: red;
+    left:0; top:50px;
+}
+.box:nth-of-type(2){
+    background-color: blue;
+    left:50px; top:100px;
+}
+.box:nth-of-type(3){
+    background-color: orange;
+    left:100px; top:150px;
+}
+.box:nth-of-type(1):hover{
+    z-index: 1;
+}
+.box:nth-of-type(2):hover{
+    z-index: 2;
+}
+.wrap{
+    border:1px solid red;
+    position:relative;
+    width:500px; height:200px;
+    overflow: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+.wrap:hover{
+    overflow:visible;
+}
+.wrap:active{
+    overflow:scroll;
+}
+.shadow{
+    width:400px; height:100px;
+    border:1px solid gray;
+    box-shadow: 5px 5px 5px 1px black;
+    margin:20px;
+    border-radius:20px;
+    text-align: center;
+    line-height: 100px;
+}
+.shadow:hover{
+    box-shadow: inset 5px 5px 5px 1px black;
+}
+.shadow:active{
+    box-shadow: 5px 5px 5px 5px gold,
+                -10px -10px 10px 10px red,
+                15px 15px 20px orange;
+}
+.shadow{
+    font-size: 2em;
+    text-shadow: 2px 2px 2px gold;
+}
+.shadow:hover{
+    font-size: 2em;
+    text-shadow: 2px 2px 2px gold,
+                 -2px -10px 6px orange,
+                 -2px -8px 4px red;
+    background-color: black;
+    color:white;
+}
+.sample{
+    border-style: solid;
+    border-width: 20px 20px 20px 20px;
+    -moz-border-image: url(../imgs/bord2.png) 40 40 40 40 repeat repeat;
+    -webkit-border-image: url(../imgs/bord2.png) 40 40 40 40 repeat repeat;
+    -o-border-image: url(../imgs/bord2.png) 40 40 40 40 repeat repeat;
+    border-image: url(../imgs/bord2.png) 40 40 40 40 repeat repeat;
+    height: 100px;
+}
+.myButton {
+	background:linear-gradient(to bottom, #44c767 5%, #5cbf2a 100%);
+	background-color:#44c767;
+	border-radius:21px;
+	border:6px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Impact;
+	font-size:24px;
+	padding:20px 50px;
+	text-decoration:none;
+	text-shadow:-2px -2px 13px #2f6627;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #5cbf2a 5%, #44c767 100%);
+	background-color:#5cbf2a;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}

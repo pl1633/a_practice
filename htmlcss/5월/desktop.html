@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/desktop.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap" rel="stylesheet">
+    <title>Tabmenu</title>
+</head>
+<body>
+    <!-- 스킵네비게이션 -->
+    <div class="ski_nav">
+        <a href="#article1">article1</a>
+        <a href="#article1">article2</a>
+        <a href="#article1">article3</a>
+    </div>
+    <header>
+        <hgroup>
+            <h1>DeskTop Page Sample</h1>
+            <h2>HTML5+CSS3 Basic</h2>
+        </hgroup>
+        <ul class="main_gnb">
+            <li><a href="#">Web</a></li>
+            <li><a href="#">Mobile</a></li>
+            <li><a href="#">Game</a></li>
+            <li><a href="#">Simulation</a></li>
+            <li><a href="#">Data</a></li>
+        </ul>
+        <ul class="local_lnb">
+            <li><a href="#">HTML5</a></li>
+            <li><a href="#">CSS3</a></li>
+            <li><a href="#">Javascript</a></li>
+            <li><a href="#">JQuery</a></li>
+            <li><a href="#">Node.js</a></li>
+        </ul>
+    </header>
+    <div id="content">
+        <section id="main_section">
+            <article id="article1" class="article">
+                <h3>Main Article</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium fugiat, deserunt voluptates distinctio quod officiis nemo consequatur blanditiis, harum ipsam veritatis quia illo id velit ducimus necessitatibus. Amet, eum necessitatibus.</p>
+            </article>
+            <article id="article2" class="article">
+                <h3>Main Article</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium labore obcaecati sequi fugiat sint nobis aliquid! Neque non quasi dignissimos officiis cupiditate natus fugiat est. Architecto amet corrupti tempora provident.</p>
+            </article>
+            <article id="article3" class="article">
+                <h3>Main Article</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus, commodi fugiat nam amet reprehenderit tempore beatae corrupti, officia iusto tenetur ad dolores placeat, sapiente veniam architecto optio quae dolor? Voluptatem?</p>
+            </article>
+        </section>
+        <aside id="main_aside">
+            <input type="radio" checked name="tab" id="first">
+            <input type="radio" checked name="tab" id="second">
+            <section class="buttons">
+                <label for="first">First</label>
+                <label for="second">Second</label>
+            </section>
+            <div class="tab_item">
+                <ul>
+                    <li><a href="#">HTML5 Canvas</a></li>
+                    <li><a href="#">HTML5 Audio</a></li>
+                    <li><a href="#">HTML5 Video</a></li>
+                    <li><a href="#">HTML5 Semantic</a></li>
+                </ul>
+            </div>
+            <div class="tab_item">
+                <ul>
+                    <li><a href="#">HTML5 Transition</a></li>
+                    <li><a href="#">HTML5 Animation</a></li>
+                    <li><a href="#">HTML5 Border</a></li>
+                    <li><a href="#">HTML5 Box</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+    <footer>
+        <h3>HTML5_CSS3 Basic</h3>
+        <address>@copy; Website Layout Basic</address>
+    </footer>
+</body>
+</html>

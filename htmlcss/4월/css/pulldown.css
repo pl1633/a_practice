@@ -1,0 +1,88 @@
+/* 1. a태그는 블럭처리한다.
+2. ul>li 메인메뉴는 float처리한다.
+3. ul메인박스는 float해제한다.
+4. 서브메뉴 ol은 숨김처리한다.
+5. 메인메뉴 li에 hover효과로 서브메뉴를 보이게한다.
+6. position처리한다. (기획의도에 다르다.)
+7. 동적인 효과 UI기능을 개선
+*/
+
+ul a{ display: block; padding: 10px; }
+
+ul{ width:600px; margin:auto; }
+
+ul>li{ float: left; }
+
+/* ul{ overflow:hidden; } */
+
+ol{
+    /* display: none; */
+    position:absolute;
+    /* visibility:hidden; */
+    opacity:0;
+}
+
+ul>li:hover>ol{
+    /* display:block; */
+    /* visibility: visible; */
+    opacity: 1;
+    transition: 1s;
+}
+
+ol>li{ height: 0; }
+ul>li:hover>ol>li{ height: 45px; transition: 0.51s;}
+
+ul>li:hover{ background: orange; }
+
+/* ul>li:hover>ol{ display: block; } */
+
+ol>li{ background: tomato; }
+
+ul>li{ position: relative; }
+
+/* ul{ height:100px; } */
+
+ul:after{ content:''; display: block; clear: both;}
+
+ol{ width:100%; }
+
+ol>li:hover{ background-color: lightgray;}
+
+/* UI기능 개선작업 */
+
+ol>li>a::before{
+    content:'';
+    width:0px; height: 100%;
+    display: block;
+    background: blue;
+    position: absolute;
+    left:0; top:0;
+}
+ol>li>a{
+    position: relative;
+}
+ol>li>a:hover:before{
+    width:5px; transition:0.2s;
+}
+
+/* 메인메뉴에 hover효과 주기 */
+ul>li>a{
+    position: relative;
+}
+ul>li>a:after{
+    content:"";
+    display: block;
+    width: 0;
+    position: absolute;
+    left:50%; bottom:0;
+    transform: translate(-50%, 0);
+    height:5px; background:blue;
+}
+
+ul>li>a:hover:after{
+    width: 100%;
+    transition: 0.5s;
+}
+
+/* 문제 : 메인메뉴에 라인이 현재 좌측에서 우측으로 width:0에서 100%로 커지고있다.
+기획안 변경 라인이 중앙에서 양쪽으로 커졌으면 좋겠다. 가능할까요? 클라이언트가 주문 */

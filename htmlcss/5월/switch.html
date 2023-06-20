@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/switch.css">
+    <title>스위치</title>
+</head>
+<body>
+    <h1>모달창 만들기</h1>
+    <a href="#modal">모달창보이기</a>
+    <hr>
+    <div id="modal">
+        <div class="modal-body">
+            <img src="./imgs/sq2.png">
+            <hr>
+            <a href="#" class="btn">닫기</a>
+        </div>
+    </div>
+    <p>버튼이나 사진을 클릭했을 때 튀어나오는 화면
+        modal popup이라고 하며 , 라이트박스라고도 한다.
+        modal은 독점적인.. 다른 컨텐츠는 선택이 안되고, 팝업창이
+        화면 중앙에 위치하면, 일반적으로 배경색은 반투명 고정이 보통이다.
+    </p>
+
+    <hr>
+    <h1>스위치 버튼 만들기</h1>
+    <div class="switch">
+        <input type="checkbox" id="sw1" class="input-on-off">
+        <label for="sw1" class="label-on-off">
+            <span class="marble"></span>
+            <span class="on">on</span>
+            <span class="off">off</span>
+        </label>
+    </div>
+
+    <h1>3단 스위치 만들기</h1>
+    <div class="switch2">
+        <input name="switch2" id="one" type="radio" checked />
+        <label for="one" class="switch_label">One</label>
+        <input name="switch2" id="two" type="radio"/>
+        <label for="two" class="switch_label">Two</label>
+        <input name="switch2" id="three" type="radio"/>
+        <label for="three" class="switch_label">Three</label>
+        <div class="switch_indicator"></div>
+    </div>
+
+    <h2>이미지 좌우 및 수직 반전 시키자</h2>
+    <img src="./imgs/sq1.png">
+
+
+    <div class="progress">
+        <h2>프로그레스바</h2>
+        <input name="check" id="zero" type="radio" checked />
+        <label for="zero" class="progress_label">0%</label>
+        <input name="check" id="twenty" type="radio"/>
+        <label for="twenty" class="progress_label">25%</label>
+        <input name="check" id="fifty" type="radio"/>
+        <label for="fifty" class="progress_label">50%</label>
+        <input name="check" id="seventy" type="radio"/>
+        <label for="seventy" class="progress_label">75%</label>
+        <input name="check" id="hundred" type="radio"/>
+        <label for="hundred" class="progress_label">100%</label>
+        <div class="bar">
+            <div class="in_bar"></div>
+        </div>
+    </div>
+
+    <style>
+        /* 이미지좌우반전 */
+        h2+img{
+            transition:1s;
+        }
+        h2+img:hover{
+            transform: rotate(0deg);
+            transform: scaleX(-1);
+            /* 원점을 지나는수직축이 있는 대칭축을 의미 */
+            filter:FlipH;
+            transition:1s;
+        }
+        /* 이미지 수직반전 */
+        h2+img:active{
+            transform: rotate(90deg);
+            transform: scaleY(-1);
+            /* 원점을 지나는 수평축이 있는 대칭축을 의미 */
+            filter:FlipV;
+            transition:1s;
+        }
+    </style>
+</body>
+</html>

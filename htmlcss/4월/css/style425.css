@@ -1,0 +1,41 @@
+.borderimg{
+    border:10px solid transparent;
+    padding:10px;
+    border-image: url(../imgs/bord3.png) 30 round;
+    margin:30px;
+}
+.borderimg:hover{
+    border-image: url(../imgs/bord3.png) 30 repeat;
+}
+.borderimg:active{
+    border-image: url(../imgs/bord3.png) 30 stretch;
+}
+.borderimg2{
+    border:10px solid transparent;
+    padding: 10px;
+    border-image: url(../imgs/bord2.png) 25 stretch;
+    margin:30px;
+}
+.borderimg3{
+    border:10px solid transparent;
+    padding: 10px;
+    border-image: url(../imgs/bord2.png) 10 repeat;
+    margin:30px;
+}
+.borderimg4{
+    border:20px solid transparent;
+    padding: 20px;
+    border-image: url(../imgs/sq1.PNG) 20 round;
+    margin:30px;
+}
+ul{
+    margin:30px;
+}
+ul>li{
+    list-style-type: decimal;
+    list-style-position: outside;
+    list-style-position: inside;
+    list-style-image: url(../imgs/icon1.jpg);
+    /* list-style:none;
+    list-style:upper-alpha inside; */
+}

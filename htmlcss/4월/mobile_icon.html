@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0; padding:0;}
+        ul{list-style: none;}
+        #icon_list>li>a{
+            display:block; width:75px; height: 81px;
+            font:12px "Helvetica"; text-decoration:none;
+            margin:auto; padding-top:15px; color:#222;
+        }
+        span.icon{
+            display:block; width:56px; height:56px;
+            background:url(./imgs/icons.PNG) no-repeat; margin:auto;
+        }
+        span.txt{display:block; width:auto; text-align: center; padding-top:5px;}
+        #icon_list>li{float:left; width:25%; cursor: pointer; height:96px;}
+        :root{ --width:-58px; --height:-57px; }
+        #icon_list #icon1{background-position: 0 0;}
+        #icon_list #icon2{background-position: var(--width) 0;}
+        #icon_list #icon3{background-position: calc(var(--width) * 2) 0;}
+        #icon_list #icon4{background-position: calc(var(--width) * 3) 0;}
+        #icon_list #icon5{background-position: 0 var(--height);}
+        #icon_list #icon6{background-position: var(--width) var(--height);}
+        #icon_list #icon7{background-position: calc(var(--width) * 2) var(--height);}
+        #icon_list #icon8{background-position: calc(var(--width) * 3) var(--height);}
+        a:hover{position: relative; top:-1px;}
+        a:active{position: relative; top:1px;}
+    </style>
+</head>
+<body>
+    <h1>모바일 아이콘 만들기</h1>
+    <ul id="icon_list">
+        <li><a href="#"><span class="icon" id="icon1"></span><span class="txt">전화걸기</span></a></li>
+        <li><a href="#"><span class="icon" id="icon2"></span><span class="txt">트위터</span></a></li>
+        <li><a href="#"><span class="icon" id="icon3"></span><span class="txt">페이스북</span></a></li>
+        <li><a href="#"><span class="icon" id="icon4"></span><span class="txt">메일</span></a></li>
+        <li><a href="#"><span class="icon" id="icon5"></span><span class="txt">RSS</span></a></li>
+        <li><a href="#"><span class="icon" id="icon6"></span><span class="txt">음악</span></a></li>
+        <li><a href="#"><span class="icon" id="icon7"></span><span class="txt">검색</span></a></li>
+        <li><a href="#"><span class="icon" id="icon8"></span><span class="txt">홈</span></a></li>
+    </ul>
+
+</body>
+</html>

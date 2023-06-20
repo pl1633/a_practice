@@ -1,0 +1,29 @@
+/* reset.css */
+
+*{   
+    margin: 0; padding: 0;
+    -webkit-text-size-adjust:none;
+}
+a{text-decoration: none; color:black;}
+li{list-style:none;}
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+a:link{color:black;}
+a:hover{text-decoration:none;}
+a:active{color:gray;}
+a:visited{color:black;}
+input,img{
+    vertical-align:baseline;
+}
+
+img,fieldset{
+    border:0;
+    }
+em,i,address{
+    font-style:normal;
+}
+
+textarea{resize:none;}
+    

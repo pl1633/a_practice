@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax실습</title>
+    <style>
+        #target{
+            border:1px solid;
+            width:400px;
+            height:600px;
+        }
+    </style>
+</head>
+<body>
+    <h1>ajax 실습하기</h1>
+    <h2>Asynchronous Javascript and XML</h2>
+    <div id="target"></div>
+    <button type="button" onclick="getData()">GET DATA</button>
+    <button type="button" onclick="jpData()">GET jpDATA</button>
+    <button type="button" onclick="bookData()">GET bookDATA</button>
+    <button type="button" onclick="jsData()">GET jsDATA</button>
+    
+
+    <script>
+        function getData(){
+            var req = new XMLHttpRequest();
+            req.onreadystatechange = function(){
+                if(req.readyState == 4 && req.status == 200){
+                    target.innerHTML = req.responseText;
+                }
+            }
+            req.open("Get", "welcome.txt",true);
+            req.send();
+        }
+        function jpData(){
+            var req = new XMLHttpRequest();
+            req.onreadystatechange = function(){
+                if(req.readyState == 4 && req.status == 200){
+                    console.log(typeof(req.responseText));
+                    var arr = req.responseText.replace(/[{,},"]/g,"");
+                    target.innerHTML = arr;
+                }
+            }
+            req.open("Get","https://jsonplaceholder.typicode.com/users/1",true)
+            req.send();
+        }
+        function bookData(){
+            var req = new XMLHttpRequest();
+            req.onreadystatechange = function(){
+                if(req.readyState == 4 && req.status == 200){
+                    var DOM = req.responseXML;
+                    var bookE = DOM.documentElement;
+                    var bookNL = bookE.getElementsByTagName('book');
+
+                    var html = "";
+                    html += "<ol>";
+                    for(var i = 0;i < bookNL.length;i++){
+                        var bookE = bookNL.item(i);
+                        var bookName = bookE.getElementsByTagName('name').item(0).firstChild.nodeValue;
+                        var pubName = bookE.getElementsByTagName('publisher').item(0).firstChild.nodeValue;
+                        var author = bookE.getElementsByTagName('author').item(0).firstChild.nodeValue;
+                        var price = bookE.getElementsByTagName('price').item(0).firstChild.nodeValue;
+
+                        html += "<li>";
+                        html += bookName + "<br> - " + pubName + "<br> - " + author + "<br> - " + price;
+                        html += "</li>";
+                        target.innerHTML = html;
+                    }
+                    html += "</ol>"
+                }
+            }
+            req.open("Get","books.xml",true)
+            req.send();
+        }
+
+        function jsData(){
+            var req = new XMLHttpRequest();
+            req.onreadystatechange = function(){
+                if(req.readyState == 4 && req.status == 200){
+                    var data = req.responseText;
+                    console.log(data);
+                    var json2 = JSON.stringify(data);// 객체를 json 문자열로 변환
+                    var json = JSON.parse(data);// json 문자열을 객체로 변환
+                    console.log(json2); 
+                    console.log(json); 
+                    console.log(json.books.book); // 배열
+                    var arr = json.books.book;
+                    var out = "<ol>";
+                    arr.forEach((ele)=>{ // ele => book[i] 0~3
+                        out += `<li>${ele.name}</li>`;
+                        out += `<ul><li>${ele.publisher}</li>`;
+                        out += `<li>${ele.author}</li>`;
+                        out += `<li>${ele.price}</li></ul>`;
+                    });
+                    out += "</ol>";
+                    target.innerHTML = out;
+                }
+            }
+            req.open("Get","books.json",true)
+            req.send();
+        }
+    </script>
+</body>
+</html>

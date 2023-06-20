@@ -1,0 +1,160 @@
+.top{
+    background: black;
+    color:white;
+    font-style: italic;
+    text-align: center;
+    padding: 3px;
+}
+.nav{
+    display:flex;
+    justify-content: space-between;
+    /* 양쪽정렬 */
+    align-items: center;
+    /* 세로중앙정렬 */
+    padding: 10px;
+    border-bottom: 1px solid gray;
+    position: relative;
+}
+.nav h1{
+    font-size: 1.5em;
+}
+.nav i{
+    font-size: 1.5em;
+}
+.xi-bars{
+    position:absolute;
+    left:5px;
+    top:15px;
+}
+#cart1{
+    position:absolute;
+    right:5px;
+    top:15px;
+}
+#search1{
+    position:absolute;
+    right:40px;
+    top:15px;
+}
+.bottom{
+    border-bottom: 1px solid lightgray;
+    position: relative;
+    text-align: center;
+}
+.bottom i{
+    position:absolute;
+    left:5px;
+    top: 8px;
+}
+.bottom h2{
+    font-size: 1em;
+    padding: 5px;
+}
+
+
+/* 박스와 글자 가운데 정렬하기
+div.box{
+    width:400px;
+    background-color: pink;
+    height:200px;
+    position:relative;
+    display:flex;
+}
+.box p{
+    width:60%;
+    background-color:orangered;
+    height:40%;
+    /* position:absolute;
+    left:50%; top:50%;
+    transform: translate(-50%,-50%); 
+    line-height: calc(200px * 0.4);
+}
+.center{
+    margin:auto;
+}
+.tac{
+    text-align: center;
+}
+html,body{
+    width:100%; height: 100%;
+}
+.box{
+    left:10%; top:50%;
+    transform: translate(-50%, -50%);
+} */
+
+
+
+
+.fom{
+    position:relative;
+    margin:10px;
+    margin-top: 5px;
+    margin:auto;
+    height:35px;
+    border-radius: 10px;
+    background-color: rgb(248, 248, 248);
+    align-items: center;
+    display: flex;
+    max-width:1200px;
+    justify-content: space-between;
+}
+#gsshop{
+    width:200px; height:40px;
+}
+.fom a{
+    width: 100%;
+    height: 100%;
+    border: none;
+    margin-left:10px;
+    background-color: rgb(248, 248, 248);
+    color:gray;
+}
+.fom i{
+    margin-left:10px;
+    font-size: 16px;
+}
+
+.top2{
+    position: relative;
+    margin:10px;
+    margin-top:20px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width:1200px;
+    margin:auto;
+}
+.top2 i{
+    float:right;
+}
+#cart2{
+    font-size: 2em;
+    float:right;
+    margin-top: 7px;
+}
+.navi {
+    margin:auto;
+    margin-top:10px;
+    max-width:1200px;
+    min-width:800px;
+    height:35px;
+    align-items: center;
+    display: flex;
+    margin:auto;
+
+}
+
+.navi li{
+    padding:7px;
+    float:left;
+    text-align: center;
+    display:block;
+}
+
+div>li:hover{
+    border-bottom: 3px solid rgb(113, 255, 113);
+ }
+div>li:active{
+    border-bottom: 3px solid green;
+ }

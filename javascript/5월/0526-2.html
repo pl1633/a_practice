@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>브라우져 객체모델</title>
+</head>
+<body>
+    <h2>브라우져 객체모델</h2>
+    <button onclick="window.close()">창닫기</button>
+    <button onclick="window.print()">인쇄하기</button>
+    <button onclick="window.history.back()">뒤로가기</button>
+    <button onclick="window.history.forward()">앞으로가기</button>
+    <button onclick="location = `http://www.daum.net`">다음</button>
+    <button onclick="location.href= `http://www.daum.net`">다음href</button>
+    <button onclick="location.assign(`http://www.daum.net`)">다음assign</button>
+    <button onclick="location.replace(`http://www.daum.net`)">다음replace</button>
+    <h1> navigator 객체</h1>
+
+    <button onclick="getGeolocation()">위치 정보 얻기</button>
+    <button onclick="showGeolocation2()">현재위치</button>
+    <div id="target"></div>
+    <hr>
+    <h2>파일 API</h2>
+    <input type="file" id="input" name="input">
+    <button id="readfile" onclick="readFile()">파일읽기</button>
+    <button id="readfile2" onclick="readFile2()">파일정보</button>
+    <hr>
+    <textarea id="result" rows="6" cols="60"></textarea>
+
+
+    <script src="js/0526-2.js"></script>
+</body>
+</html>

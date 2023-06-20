@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="js/jquery.js" defer></script>
+    <title>Jquery</title>
+    <script>
+        $(document).ready(function(){
+            $('h1').css('background','pink');
+        });
+        // 익명함수
+        $(function(){
+            $('ul').css('border','2px solid');
+        });
+        jQuery(function(){
+            $('ul').css('border-radius','10px');
+        })
+        // var kim = $.noConflict();
+        // kim(function(){
+        //     kim('li').css('border','2px solid red');
+        // })
+        $(()=>{
+            // 메소드 체이닝 기법
+            $('#first')
+            .css('background','gray')
+            .css('color','red');
+
+            $('li.menu').css({ // 스타일이 많을때는 객체로 집어넣는다.
+                'font-weight':'bold',
+                textAlign:'center', //자바스크립트 변수형태
+                border:'2px solid blue',
+                boxShadow:'3px 3px black'
+            });
+            // css()의 getter 기능
+            var color = $('li.menu').css('background-color');
+            console.log(color);
+
+            $('#info').html(color); // innerHTML
+            $('input[type="text"]').val("Hello jQuery");
+        });
+    </script>
+</head>
+<body>
+    <h1>jQuery 시작</h1>
+    <ul>
+        <li id="first">menu1</li>
+        <li class="menu">menu2</li>
+        <li class="menu">menu3</li>
+        <li>menu4</li>
+        <li><a>menu5</a></li>
+        <li><span>menu6</span></li>
+    </ul>
+    <h1>jQuery 시작</h1>
+    <input type="text">
+    <input type="button">
+    <input type="submit">
+    <input type="focus">
+    <hr>
+    <Select>
+        <option>강아지</option>
+        <option>고양이</option>
+        <option>호랑이</option>
+    </Select>
+    <div id="info"></div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/0516-1.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h2>버튼 클릭했을때 배경색 변경하기</h2>
+    <button id="button" onclick="chColor2(this,'red')">버튼</button>
+    <hr>
+    <button id="button2" onclick="chColor2(this,'blue')">버튼2</button>
+    <button onclick="chColor(this,'yellow')">버튼3</button>
+    <button onclick="chColor(this, 'hotpink')">버튼4</button>
+    <div style="width:200px; height:300px; border:1px solid;"></div>
+    <script>
+
+        function chColor(obj,color){
+            console.log(color + "가 적용됨");
+            obj.style.backgroundColor=color;
+        }
+        function chColor2(obj,color){
+            console.log(color + "가 적용됨");
+            obj.style.color=color;
+        }
+
+        var color = ["red", "pink", "blue", "orange", "gold"];
+        var body = document.querySelector('body');
+        var body = document.getElementsByTagName('body')[0];
+        var i = 0;
+        var j = 0;
+        // 객체.이벤트 타입 = 이벤트리스너 ;
+        button.addEventListener('click', function () {
+        i = i % color.length;  // 0,1,2,3,4,5
+        //if(i>6) i=0;
+        body.style.backgroundColor = color[i];
+        i++;      
+        }); 
+        // 버튼하나 만들어서 , div 박스 하나 생성해서 버튼클릭하면 배경색 변하게 하기
+        var color2 = ["red", "orange", "yellow", "green", "blue", "navy", "purple"];
+        var div = document.querySelector('div');
+        button2.addEventListener('click', function(){
+            j = j % color2.length;
+            div.style.backgroundColor = color2[j];
+            j++
+        });
+        button2.onmouseover = function(){
+            chColor2(this,'yellow');
+        }
+        button2.onmouseout = function(){
+            chColor2(this,'pink');
+        }
+    </script>
+    
+</body>
+</html>
