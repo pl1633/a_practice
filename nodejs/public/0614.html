@@ -21,9 +21,7 @@
 <hr>
 <button id="food">Food</button>
 
-
  <script>
-
 $('#food').on('click',function(){
  $.ajax({
   url:"/data.html",
@@ -34,14 +32,6 @@ $('#food').on('click',function(){
   }
  });
 });
-
-
-
-
-
-
-
-
 
 $('#member').on('submit',function(){
  var d=$(this).serialize();

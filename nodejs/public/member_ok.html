@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        li a{
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <h1>회원가입 완료되었습니다.</h1>
+    <a href="#" onclick="memberLoad2()">회원목록보기</a>
+    <div id="content">
+
+    </div>
+    <script>
+        $(document).on('click','.del_btn',function(e){
+            var id=e.currentTarget.id;
+            console.log(id);
+            $.ajax({
+                url:'/students/'+id,
+                type:'delete',
+                success:function(data){
+                    memberLoad2();  // 전체목록보기
+                }
+            })
+        });
+
+        $(document).on('click','.a_id a',function(e){
+            $('#content').empty();
+            var id=e.currentTarget.textContent;
+            console.log(id + "의 상세정보");
+            $.ajax({
+                url:'/students/'+id,
+                type:'get',
+                success:function(d){
+                    console.log(d);
+                    var out = '';
+                    out += "<div class='card'>";
+                    out += "<div class='card-body'>";
+                    out += `<h5 class="card-title">id : ${id}</h5>`;
+                    out += `<p class="card-text">name : ${d[0].name} </p>`;
+                    out += `<p class="card-text">password : ${d[0].password} </p>`;
+                    out += `<p class="card-text">email : ${d[0].email} </p>`;
+                    out += `<p class="card-text">gender : ${d[0].gender} </p>`;
+                    out += `<a href="#" id="${id}" class="btn btn-primary su">수정하기</a>`;
+                    out += '<a href="#" onclick="memberLoad2()" class="btn btn-primary">Go to Main</a>';
+                    out += "</div>";
+                    out += "</div>";
+                    $('#content').append(out);
+                }
+            })
+        });
+
+        $(document).on('click','.su',function(e){
+            $('#content').empty();
+            var id=e.currentTarget.id;
+            console.log(id + "의 수정페이지");
+            $.ajax({
+                url:'/students/'+id,
+                type:'get',
+                success:function(d){
+                    console.log(d);
+                    var out = '';
+                    out += `<form id='mForm'>`;
+                    out += `<label>ID</label><input type="text" id="id" name="id" class="form-control" value="${d[0].id}">`;
+                    out += `<label>NAME</label><input type="text" id="name" name="name" class="form-control" value="${d[0].name}">`;
+                    out += `<label>PASSWORD</label><input type="text" id="password" name="password" class="form-control" value="${d[0].password}">`;
+                    out += `<label>EMAIL</label><input type="text" id="email" name="email" class="form-control" value="${d[0].email}">`;
+                    out += `<label>GENDER</label><input type="text" id="gender" name="gender" class="form-control" value="${d[0].gender}">`;
+                    out += `</form>`;
+                    out += `<button id="sujung" class="btn btn-primary">수정하기</button>`;
+                    out += '<a href="#" onclick="memberLoad2()" class="btn btn-primary">Go to Main</a>';
+                    $('#content').append(out);
+                }
+            });
+        });
+
+        $(document).on('click','#sujung',function(){
+            console.log("수정클릭됨");
+            var data = $('#mForm').serialize();
+            console.log(data.id);
+            $.ajax({
+                url: '/students',
+                type: "put",
+                data: data,
+                success: function(){ // app.put에 들어가서 INSERT의 결과값이 반환
+                    memberLoad2();   // 그러면 다시 get할 id는 어디서 구하는데
+                }
+            });
+        });
+
+        // function recall(id){
+        //     console.log("recall 실행됨" + id);
+        //     $.ajax({
+        //         url: '/students/' + id,
+        //         type: 'get',
+        //         success: function(d){
+        //             console.log(d);
+        //             var out = '';
+        //             out += "<div class='card'>";
+        //             out += "<div class='card-body'>";
+        //             out += `<h5 class="card-title">id : ${d[0].id}</h5>`;
+        //             out += `<p class="card-text">name : ${d[0].name} </p>`;
+        //             out += `<p class="card-text">password : ${d[0].password} </p>`;
+        //             out += `<p class="card-text">email : ${d[0].email} </p>`;
+        //             out += `<p class="card-text">gender : ${d[0].gender} </p>`;
+        //             out += `<a href="#" id="${d[0].id}" class="btn btn-primary su">수정하기</a>`;
+        //             out += '<a href="#" onclick="memberLoad2()" class="btn btn-primary">Go to Main</a>';
+        //             out += "</div>";
+        //             out += "</div>";
+        //             $('#content').append(out);
+        //         }
+        //     })
+        // }
+
+        function memberLoad(){
+            $.ajax({
+                url:'/students',
+                type:'get',
+                success:function(data){
+                    var out = '';
+                    $(data).each((i,d)=>{
+                        out += "<ol>";
+                        out += `<li class="a_id">id : <a href="#">${d.id}</a> <button id=${d.id} class="del_btn">삭제</button></li>`;
+                        out += `<li>name : ${d.name} </li>`;
+                        out += `<li>password : ${d.password} </li>`;
+                        out += `<li>email : ${d.email} </li>`;
+                        out += `<li>gender : ${d.gender} </li>`;
+                        out += "</ol>";
+                    })
+                    $('#content').empty();
+                    $(out).appendTo('#content');
+                }
+            })
+        }
+        function memberLoad2(){
+            $.ajax({
+                url:'/students',
+                type:'get',
+                success:function(data){
+                    console.log(data);
+                    $('#content').empty();
+                    var out = '<div class="container">';
+                    var i = 0;
+                    $(data).each((i,d)=>{
+                        out += "<ol class='list-group mt-3 a_id'>";
+                        out += `<li class='list-group-item active'>id : <a href="#">${d.id}</a> <button id ="${d.id}" class="del_btn">삭제</button></li>`;
+                        out += `<li class='list-group-item'>name : ${d.name} </li>`;
+                        out += `<li class='list-group-item'>password : ${d.password} </li>`;
+                        out += `<li class='list-group-item'>email : ${d.email} </li>`;
+                        out += `<li class='list-group-item'>gender : ${d.gender} </li>`;
+                        out += "</ol>";
+                    });
+                    out += "</div>";
+                    $(out).appendTo('#content');
+                }
+            })
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</body>
+</html>
