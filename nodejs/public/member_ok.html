@@ -68,7 +68,7 @@
                     console.log(d);
                     var out = '';
                     out += `<form id='mForm'>`;
-                    out += `<label>ID</label><input type="text" id="id" name="id" class="form-control" value="${d[0].id}">`;
+                    out += `<label>ID(Cannot change)</label><input type="text" id="id" name="id" class="form-control" value="${d[0].id}" readonly/>`;
                     out += `<label>NAME</label><input type="text" id="name" name="name" class="form-control" value="${d[0].name}">`;
                     out += `<label>PASSWORD</label><input type="text" id="password" name="password" class="form-control" value="${d[0].password}">`;
                     out += `<label>EMAIL</label><input type="text" id="email" name="email" class="form-control" value="${d[0].email}">`;
@@ -90,7 +90,7 @@
                 type: "put",
                 data: data,
                 success: function(){ // app.put에 들어가서 INSERT의 결과값이 반환
-                    memberLoad2();   // 그러면 다시 get할 id는 어디서 구하는데
+                    memberLoad2();   // 그러면 다시 get할 id는 어디서 구하는데 data.id = 인식X
                 }
             });
         });
