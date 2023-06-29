@@ -1,5 +1,6 @@
 package test01;
 
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -23,10 +24,26 @@ public class Test02 {
         System.out.println(rand2);
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println(scanner);
         String str3 = scanner.next();
         System.out.println(str3);
         int num2 = scanner.nextInt();
         System.out.println(num2);
+
+        // <> wrapper 클래스 -> 자료형, Integer, String
+        ArrayList<Integer> scoreList = new ArrayList<>();
+        scoreList.add(10);
+        scoreList.add(50);
+        scoreList.add(30);
+        scoreList.add(40);
+        scoreList.add(2,200);
+        System.out.println(scoreList);
+        scoreList.remove(1);
+        System.out.println(scoreList);
+
+        add(10,20);
+    }
+
+    public static void add(int i, int j) {
+        System.out.println(i+j);
     }
 }
