@@ -30,25 +30,34 @@
          aArray[i].value=""; // 답 입력 난 지우기
       }
    }
-   
+
    function startTimer(){
     let count = 10;
     let clock = document.getElementById('clock');
-    setInterval(() => {
+    clock.innerHTML = count;
+    document.getElementById('score').innerHTML = 0;
+
+    let interval = setInterval(() => {
+        console.log(--count);
+        clock.innerHTML = count;
         if(count == 0){
-            clearInterval();
+            console.log("초기화");
+            clearInterval(interval);
             chajum();
         }
-        console.log(--count);
-        clock.value = count;
     }, 1000);
+
     }
     function chajum(){
         let q = document.querySelectorAll('.question');
-    let a = document.querySelectorAll('./answer');
-    for(var i=0;i<q.length;i++){
-            if(a[i] != q[i]){
-                a[i].style.textDecoration = "line-through";
+        let a = document.querySelectorAll('.answer');
+        let result = document.getElementById('score');
+
+        for(var i=0;i<q.length;i++){
+            if(a[i].value != eval(q[i].innerHTML)){
+                q[i].style.textDecoration = "line-through";
+            }else{
+                result.innerHTML = parseInt(result.innerHTML) + parseInt(100/q.length);
             }
         }
     }
