@@ -1,15 +1,24 @@
 package hello.core.member;
 
+import hello.core.AppConfig;
 import hello.core.repository.MemoryMemberRepository;
 import hello.core.service.MemberService;
 import hello.core.service.MemberServiceImpl;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class MemberServiceTest {
+    MemberService mem;
+
+    @BeforeEach
+    public void beforeEach(){
+        AppConfig appConfig = new AppConfig();
+        MemberService mem = appConfig.MemberService();
+    }
+
     @Test
     void join(){
-        MemberService mem = new MemberServiceImpl();
         //given 상황
         //테스트 회원을 생성한다 (id는1, 이름은 name, 회원등급은 VIP)
         Member test = new Member(1L,"name",Grade.VIP);
