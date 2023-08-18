@@ -7,10 +7,20 @@ import hello.core.member.Member;
 import hello.core.order.Order;
 import hello.core.repository.MemberRepository;
 import hello.core.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
 
+@Component
 public class OrderServiceImpl implements OrderService{
     private final MemberRepository mem;
     private final DiscountPolicy dis;
+
+
+//    public MemberRepository getMemberRepository(){
+//        return mem;
+//    }
 
     public OrderServiceImpl(MemberRepository mem, DiscountPolicy dis){
         this.mem = mem;

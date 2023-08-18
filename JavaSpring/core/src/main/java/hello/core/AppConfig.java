@@ -12,23 +12,21 @@ import hello.core.service.OrderServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
-public class AppConfig {
-    //appconfig 객체는 memoryMemberRepository 객체를 생성하고 그 참조값을 memberServiceImpl을 생성하면서 생성자로 전달한다.
-    @Bean
-    public MemberService MemberService(){
-        return new MemberServiceImpl(MemberRepository());
-    }
-    @Bean
-    public MemberRepository MemberRepository(){
-        return new MemoryMemberRepository();
-    }
-    @Bean
-    public OrderService OrderService(){
-        return new OrderServiceImpl(MemberRepository(),discountPolicy());
-    }
-    @Bean
-    public DiscountPolicy discountPolicy(){
-        return new RateDiscountPolicy();
-    }
-}
+//@Configuration
+//public class AppConfig {
+//    //appconfig 객체는 memoryMemberRepository 객체를 생성하고 그 참조값을 memberServiceImpl을 생성하면서 생성자로 전달한다.
+//    @Bean
+//    public MemberService MemberService(){return new MemberServiceImpl(MemberRepository());}
+//    @Bean
+//    public MemberRepository MemberRepository(){
+//        return new MemoryMemberRepository();
+//    }
+//    @Bean
+//    public OrderService OrderService(){
+//        return new OrderServiceImpl(MemberRepository(),discountPolicy());
+//    }
+//    @Bean
+//    public DiscountPolicy discountPolicy(){
+//        return new RateDiscountPolicy();
+//    }
+//}

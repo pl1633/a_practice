@@ -3,14 +3,23 @@ package hello.core.service;
 import hello.core.member.Member;
 import hello.core.repository.MemberRepository;
 import hello.core.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
+
+@Component
 public class MemberServiceImpl implements MemberService{
     private final MemberRepository memberRepository;
 
+    //테스트 용도
+    public MemberRepository getMemberRepository(){
+        return memberRepository;
+    }
+
+    @Autowired
     public MemberServiceImpl(MemberRepository memberRepository){
         this.memberRepository = memberRepository;
     }
-    // MemberServiceImpl 입장에서 생성자를 통해 어떤 구현객체가 들어올지는 알 수 없다.
-    // 뭐가올지는 appconfig만 안다
 
     //회원가입
     @Override

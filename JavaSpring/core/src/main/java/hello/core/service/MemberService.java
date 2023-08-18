@@ -1,6 +1,8 @@
 package hello.core.service;
 
 import hello.core.member.Member;
+import org.springframework.stereotype.Component;
+
 
 public interface MemberService {
     //회원가입

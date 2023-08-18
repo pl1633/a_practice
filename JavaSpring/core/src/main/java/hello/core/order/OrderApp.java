@@ -1,6 +1,6 @@
 package hello.core.order;
 
-import hello.core.AppConfig;
+import hello.core.AutoAppConfig;
 import hello.core.member.Grade;
 import hello.core.member.Member;
 import hello.core.service.MemberService;
@@ -12,7 +12,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class OrderApp {
     public static void main(String[] args) {
-        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AutoAppConfig.class);
         MemberService member = applicationContext.getBean("MemberService",MemberService.class);
         OrderService orderService = applicationContext.getBean("OrderService",OrderService.class);
 
