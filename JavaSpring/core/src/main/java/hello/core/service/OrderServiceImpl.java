@@ -7,29 +7,21 @@ import hello.core.member.Member;
 import hello.core.order.Order;
 import hello.core.repository.MemberRepository;
 import hello.core.repository.MemoryMemberRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
+@RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService{
-    private final MemberRepository mem;
-    private final DiscountPolicy dis;
-
-
-//    public MemberRepository getMemberRepository(){
-//        return mem;
-//    }
-
-    public OrderServiceImpl(MemberRepository mem, DiscountPolicy dis){
-        this.mem = mem;
-        this.dis = dis;
-    }
+    private final MemberRepository memberRepository;
+    private final DiscountPolicy discountPolicy;
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
-        int discountPrice = dis.discount(mem.findById(memberId),itemPrice);
+        int discountPrice = discountPolicy.discount(memberRepository.findById(memberId),itemPrice);
         return new Order(memberId,itemName,itemPrice,discountPrice);
     }
 }

@@ -14,7 +14,7 @@ public class MemberServiceTest {
     @BeforeEach
     public void beforeEach(){
         AppConfig appConfig = new AppConfig();
-        MemberService mem = appConfig.MemberService();
+        MemberService mem = appConfig.memberService();
     }
 
     @Test
