@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h4>if, unless</h4>
+    <p>타임리프는 해당 조건이 맞지 않으면 태그 자체를 랜더링하지 않는다. 만약 다음 조건이 false 인 경우
+    &lt;span &gt;...&lt;/span&gt; 부분 자체가 렌더링 되지 않고 사라진다.</p>
+    <table border="1">
+        <tr>
+            <th>count</th>
+            <th>username</th>
+            <th>age</th>
+        </tr>
+        <tr th:each="user,userStat : ${users}">
+            <td th:text="${userStat.count}"></td>
+            <td th:text="${user.username}"></td>
+            <td th:text="'미성년자'" th:if="${user.age lt 20}"></td>
+            <td th:text="'성인'" th:unless="${user.age lt 20}"></td>
+        </tr>
+    </table>
+    <table border="1">
+        <tr>
+            <th>count</th>
+            <th>username</th>
+            <th>age</th>
+        </tr>
+        <tr th:each="user,userStat : ${users}">
+            <td th:text="${userStat.count}"></td>
+            <td th:text="${user.username}"></td>
+            <td th:switch="${user.age}">
+                <span th:case="10">10살</span>
+                <span th:case="20">20살</span>
+                <span th:case="*">기타</span>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

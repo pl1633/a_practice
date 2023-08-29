@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>attribute</title>
+</head>
+<body>
+    <h4>타임리프 태그 속성(Attribute)</h4>
+    <p>타임리프는 주로 HTML 태그에 th:* 속성을 지정하는 방식으로 동작한다. th:* 로 속성을 적용하면
+    기존 속성을 대체한다. 기존 속성이 없으면 새로 만든다.</p>
+    <input type="text" name="mock" th:name="userA"/>
+    <h1>속성 추가</h1>
+    -th:attrappend = <input type="text" class="mock" th:attrappend="class='large'"/><br>
+    -th:attrprepend = <input type="text" class="text" th:attrprepend="class='large'"/>
+    -th:classappend = <input type="text" class="text" th:classappend="large"/>
+    <h1>checked 처리</h1>
+    <input type="checkbox" th:checked="true"/>
+    <input type="checkbox" th:checked="false"/>
+    <input type="checkbox" checked="false"/>
+</body>
+</html>
