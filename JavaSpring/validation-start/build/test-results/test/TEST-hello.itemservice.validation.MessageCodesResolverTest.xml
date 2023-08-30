@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="hello.itemservice.validation.MessageCodesResolverTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-08-30T03:39:50" hostname="DESKTOP-RULLE8I" time="0.1">
+  <properties/>
+  <testcase name="messageCodesResolverObject()" classname="hello.itemservice.validation.MessageCodesResolverTest" time="0.098"/>
+  <testcase name="messageCodesResolverField()" classname="hello.itemservice.validation.MessageCodesResolverTest" time="0.002"/>
+  <system-out><![CDATA[required.item (log1)
+required (log1)
+required.item.itemName (log2)
+required.itemName (log2)
+required.java.lang.String (log2)
+required (log2)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
