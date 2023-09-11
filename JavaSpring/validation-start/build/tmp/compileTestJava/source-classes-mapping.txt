@@ -6,3 +6,5 @@ hello/itemservice/message/MessageSourceTest.java
  hello.itemservice.message.MessageSourceTest
 hello/itemservice/validation/MessageCodesResolverTest.java
  hello.itemservice.validation.MessageCodesResolverTest
+hello/itemservice/validation/BeanValidationTest.java
+ hello.itemservice.validation.BeanValidationTest
